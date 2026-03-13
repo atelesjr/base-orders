@@ -1,0 +1,20 @@
+{
+  "cSpell.language": "en,pt-BR",
+  "cSpell.enableFiletypes": [
+    "typescript",
+    "javascript",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "cSpell.languageSettings": [
+    {
+      "languageId": "*",
+      "locale": "en"
+    },
+    {
+      "languageId": "typescript,javascript,typescriptreact,javascriptreact",
+      "dictionaries": ["en", "pt-BR"],
+      "description": "Use English for code, Portuguese for strings/comments"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+@theme {
+	--font-main:
+		'Helvetica Neue LT W01 45 Light', ui-sans-serif, system-ui, -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+		'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
+
+	--color-black: #000000;
+
+	--color-blue: #64b5f6;
+	--color-gray: #e3e3e3;
+	--color-green: #98d4a5;
+	--color-green-dark: #7db989;
+	--color-red: #e57373;
+	--color-red-alert: #ff1744;
+	--color-white: #ffffff;
+	--color-yellow: #f5e1a4;
+
+	--color-background-white: var(--color-white);
+	--color-text: var(--color-black);
+
+	/* Responsive font sizes using clamp(min, ideal, max) */
+	/* Base: 11px (mobile) → fluid scale → 16px (desktop) */
+	--font-size-base: clamp(1.1rem, 1rem + 0.5vw, 1.6rem);
+	/* H1: 26px (mobile) → fluid scale → 38px (desktop) */
+	--h1-size: clamp(2.6rem, 2rem + 2.5vw, 3.8rem);
+	/* H2: 20px (mobile) → fluid scale → 28px (desktop) */
+	--h2-size: clamp(2rem, 1.6rem + 1.5vw, 2.8rem);
+	/* H3: 14px (mobile) → fluid scale → 18px (desktop) */
+	--h3-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.8rem);
+	/* H4: 11px (mobile) → fluid scale → 14px (desktop) */
+	--h4-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+
+	--form-input-outline: 1px solid var(--color-black);
+}

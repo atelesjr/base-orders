@@ -1,0 +1,9 @@
+@layer components {
+	.page-container {
+		@apply w-full min-h-screen;
+	}
+
+	.main {
+		@apply py-10 px-25;
+	}
+}

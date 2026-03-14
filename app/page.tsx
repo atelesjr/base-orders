@@ -1,23 +1,18 @@
-import Image from 'next/image';
-import { ordersService } from './services/orders.service';
+import { ordersService } from '@/services/orders.service';
+import Header from '@/components/Header';
 
 export default async function Home() {
 	// Fetch orders from json-server
 	const orders = await ordersService.getOrders();
-	
+
 	// Log orders to console
 	console.log('Orders from db.json:', orders);
 	console.log('Total orders:', orders.length);
 
 	return (
-		<div className="">
-			<main className="">
-				<Image
-					src="/assets/base-logo.avif"
-					alt="Base Logo"
-					width={200}
-					height={200}
-				/>
+		<div className="page-container">
+			<Header />
+			<main className="main">
 				<h1>Sobre nós</h1>
 				<h2>Sobre nós</h2>
 				<h3>Sobre nós</h3>

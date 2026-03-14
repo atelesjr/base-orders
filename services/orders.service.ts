@@ -1,17 +1,4 @@
-export interface Order {
-	id: string;
-	instrument: string;
-	side: 'Compra' | 'Venda';
-	price: number;
-	quantity: number;
-	remainingQuantity: number;
-	status: 'Aberta' | 'Executada' | 'Parcial' | 'Cancelada';
-	timestamp: string;
-	statusHistory: Array<{
-		status: string;
-		updatedAt: string;
-	}>;
-}
+import { Order } from '@/types';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 

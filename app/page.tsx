@@ -1,6 +1,14 @@
 import Image from 'next/image';
+import { ordersService } from './services/orders.service';
 
-export default function Home() {
+export default async function Home() {
+	// Fetch orders from json-server
+	const orders = await ordersService.getOrders();
+	
+	// Log orders to console
+	console.log('Orders from db.json:', orders);
+	console.log('Total orders:', orders.length);
+
 	return (
 		<div className="">
 			<main className="">

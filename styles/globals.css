@@ -6,3 +6,6 @@
 /* Import custom layers */
 @import './base.css';
 @import './theme.css';
+
+/* Components */
+@import './components/layout.css';

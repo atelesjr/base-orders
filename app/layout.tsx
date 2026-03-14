@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import './styles/globals.css';
+import '../styles/globals.css';
 
 export const metadata: Metadata = {
 	title: 'Base Orders',
@@ -13,7 +13,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="pt-BR">
 			<body className="antialiased">{children}</body>
 		</html>
 	);

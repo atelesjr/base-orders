@@ -1,0 +1,9 @@
+{
+	"cSpell.language": "en,pt-BR",
+	"cSpell.enabledFileTypes": {
+		"typescript": true,
+		"javascript": true,
+		"typescriptreact": true,
+		"javascriptreact": true
+	}
+}

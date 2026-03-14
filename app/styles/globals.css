@@ -1,0 +1,8 @@
+/* Helvetica Neue LT W01 45 Light Fonts   */
+@import url('https://db.onlinewebfonts.com/c/e8ba72f2d2d83267ebe2efd5387ce718?family=Helvetica+Neue+LT+W01+45+Light');
+
+@import 'tailwindcss';
+
+/* Import custom layers */
+@import './base.css';
+@import './theme.css';

@@ -1,0 +1,50 @@
+@reference '../../styles/globals.css';
+
+.orders-grid {
+	@apply w-full;
+}
+
+.orders-grid__title {
+	@apply mb-6;
+}
+
+.orders-grid__table-wrapper {
+	@apply w-full overflow-x-auto;
+}
+
+.orders-grid__table {
+	@apply w-full border-collapse;
+	border: 1px solid var(--color-black);
+	min-width: 680px;
+}
+
+.orders-grid__head-row,
+.orders-grid__row {
+	border-bottom: 1px solid var(--color-black);
+}
+
+.orders-grid__th,
+.orders-grid__td {
+	@apply px-4 py-3 text-left whitespace-nowrap;
+	border-right: 1px solid var(--color-black);
+}
+
+.orders-grid__th:last-child,
+.orders-grid__td:last-child {
+	border-right: 0;
+}
+
+.orders-grid__th {
+	@apply font-semibold;
+}
+
+.orders-grid__row:last-child {
+	border-bottom: 0;
+}
+
+@media (max-width: 640px) {
+	.orders-grid__th,
+	.orders-grid__td {
+		@apply px-3 py-2;
+	}
+}

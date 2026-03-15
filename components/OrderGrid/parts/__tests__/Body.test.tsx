@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { OrdersGridBody } from '../Body';
 import type { OrdersGridColumn } from '../../types';
 import { makeOrder } from '@/lib/orders/__tests__/fixtures/orders.fixture';
@@ -52,5 +52,34 @@ describe('OrdersGridBody', () => {
 		);
 
 		expect(container.querySelectorAll('tbody tr')).toHaveLength(0);
+	});
+
+	it('supports keyboard activation when row is clickable', () => {
+		const columns: OrdersGridColumn[] = [
+			{
+				key: 'instrument',
+				label: 'Instrumento',
+				render: (order) => order.instrument,
+			},
+		];
+		const order = makeOrder({ id: '1', instrument: 'PETR4' });
+		const onRowClick = jest.fn();
+
+		const { container } = render(
+			<table>
+				<OrdersGridBody columns={columns} onRowClick={onRowClick} orders={[order]} />
+			</table>,
+		);
+
+		const row = container.querySelector('tbody tr');
+		expect(row).toHaveAttribute('tabindex', '0');
+		expect(row).toHaveAttribute('role', 'button');
+
+		fireEvent.keyDown(row as Element, { key: 'Enter' });
+		fireEvent.keyDown(row as Element, { key: ' ' });
+
+		expect(onRowClick).toHaveBeenCalledTimes(2);
+		expect(onRowClick).toHaveBeenNthCalledWith(1, order);
+		expect(onRowClick).toHaveBeenNthCalledWith(2, order);
 	});
 });

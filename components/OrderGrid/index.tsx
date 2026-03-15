@@ -15,7 +15,11 @@ type OrdersGridCompoundComponent = ((props: OrdersGridProps) => ReactNode) & {
 	defaultColumns: OrdersGridColumn[];
 };
 
-const OrdersGrid = (({ orders, columns = defaultColumns }: OrdersGridProps) => {
+const OrdersGrid = (({
+	orders,
+	columns = defaultColumns,
+	onRowClick,
+}: OrdersGridProps) => {
 	return (
 		<OrdersGridRoot>
 			<OrdersGridTable>
@@ -25,7 +29,7 @@ const OrdersGrid = (({ orders, columns = defaultColumns }: OrdersGridProps) => {
 					))}
 				</colgroup>
 				<OrdersGridHead columns={columns} />
-				<OrdersGridBody columns={columns} orders={orders} />
+				<OrdersGridBody columns={columns} onRowClick={onRowClick} orders={orders} />
 			</OrdersGridTable>
 		</OrdersGridRoot>
 	);

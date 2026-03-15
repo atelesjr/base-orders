@@ -1,0 +1,37 @@
+@reference '../../styles/globals.css';
+
+.order-details-modal__summary {
+	@apply grid grid-cols-1 gap-3 md:grid-cols-2;
+}
+
+.order-details-modal__item {
+	@apply rounded border border-black p-3;
+}
+
+.order-details-modal__label {
+	@apply mb-1 block text-grid-sm font-semibold text-black;
+}
+
+.order-details-modal__value {
+	@apply text-grid-sm text-black;
+}
+
+.order-details-modal__section-title {
+	@apply mt-5 mb-3 text-grid-sm font-semibold text-black;
+}
+
+.order-details-modal__history-list {
+	@apply m-0 list-none space-y-2 p-0;
+}
+
+.order-details-modal__history-item {
+	@apply rounded border border-black px-3 py-2;
+}
+
+.order-details-modal__history-status {
+	@apply text-grid-sm font-semibold text-black;
+}
+
+.order-details-modal__history-date {
+	@apply text-grid-sm text-black;
+}

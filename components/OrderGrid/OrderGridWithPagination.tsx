@@ -1,6 +1,5 @@
-import OrdersGrid from '@/components/OrderGrid';
 import { getPaginatedOrdersForGrid } from '@/lib/orders/orders.service';
-import { OrdersGridPagination } from './parts/Pagination';
+import OrderGridWithPaginationClient from './OrderGridWithPaginationClient';
 
 type OrderGridWithPaginationProps = {
 	searchParams: Promise<{
@@ -15,7 +14,9 @@ const OrderGridWithPagination = async ({
 }: OrderGridWithPaginationProps) => {
 	const resolvedSearchParams = await searchParams;
 	const parsedPage = Number.parseInt(resolvedSearchParams.page ?? '1', 10);
-	const requestedPage = Number.isNaN(parsedPage) ? 1 : parsedPage;
+	const requestedPage = Number.isNaN(parsedPage)
+		? 1
+		: Math.max(1, parsedPage);
 
 	const { items, currentPage, totalPages, prevPage, nextPage } =
 		await getPaginatedOrdersForGrid(requestedPage, pageSize);
@@ -28,17 +29,7 @@ const OrderGridWithPagination = async ({
 	};
 
 	return (
-		<>
-			<OrdersGridPagination
-				className="orders-grid__pagination--top"
-				pagination={pagination}
-			/>
-			<OrdersGrid orders={items} />
-			<OrdersGridPagination
-				className="orders-grid__pagination--bottom"
-				pagination={pagination}
-			/>
-		</>
+		<OrderGridWithPaginationClient orders={items} pagination={pagination} />
 	);
 };
 

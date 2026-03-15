@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import OrdersGrid from '../index';
 import { defaultColumns } from '../columns';
 import type { OrdersGridColumn } from '../types';
@@ -50,6 +50,23 @@ describe('OrderGrid', () => {
 
 		expect(screen.getByRole('table')).toBeInTheDocument();
 		expect(container.querySelectorAll('tbody tr')).toHaveLength(0);
+	});
+
+	it('calls onRowClick when a row is clicked', () => {
+		const orders = [makeOrder({ id: '1', instrument: 'VALE3' })];
+		const onRowClick = jest.fn();
+
+		const { container } = render(
+			<OrdersGrid onRowClick={onRowClick} orders={orders} />,
+		);
+
+		const row = container.querySelector('tbody tr');
+		expect(row).toBeTruthy();
+
+		fireEvent.click(row as Element);
+
+		expect(onRowClick).toHaveBeenCalledTimes(1);
+		expect(onRowClick).toHaveBeenCalledWith(orders[0]);
 	});
 
 	it('exposes compound members for composition', () => {

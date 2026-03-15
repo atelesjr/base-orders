@@ -1,5 +1,5 @@
 {
-	"extends": ["stylelint-config-standard", "stylelint-config-tailwindcss"],
+	"extends": ["stylelint-config-standard"],
 	"rules": {
 		"at-rule-no-unknown": [
 			true,
@@ -24,6 +24,7 @@
 		"custom-property-empty-line-before": null,
 		"property-no-vendor-prefix": null,
 		"at-rule-empty-line-before": null,
-		"declaration-property-value-no-unknown": null
+		"declaration-property-value-no-unknown": null,
+		"import-notation": null
 	}
 }

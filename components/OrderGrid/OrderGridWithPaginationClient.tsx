@@ -36,7 +36,7 @@ const OrderGridWithPaginationClient = ({
 			/>
 
 			<OrderDetailsModal
-				open={Boolean(selectedOrderId)}
+				open={Boolean(selectedOrder)}
 				onOpenChange={(nextOpen) => {
 					if (!nextOpen) {
 						setSelectedOrderId(null);

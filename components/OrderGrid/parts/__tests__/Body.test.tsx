@@ -67,7 +67,11 @@ describe('OrdersGridBody', () => {
 
 		const { container } = render(
 			<table>
-				<OrdersGridBody columns={columns} onRowClick={onRowClick} orders={[order]} />
+				<OrdersGridBody
+					columns={columns}
+					onRowClick={onRowClick}
+					orders={[order]}
+				/>
 			</table>,
 		);
 

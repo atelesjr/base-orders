@@ -13,8 +13,7 @@
 }
 
 .orders-grid__table {
-	@apply w-full border-collapse border border-black table-fixed;
-	min-width: 680px;
+	@apply w-full min-w-[680px] border-collapse border border-black table-fixed;
 }
 
 .orders-grid__head-row,

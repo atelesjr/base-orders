@@ -68,6 +68,28 @@ describe('fetchWithTimeout', () => {
 		await assertion;
 	});
 
+	it('respects caller abort signal', async () => {
+		const abortError = new DOMException('The operation was aborted.', 'AbortError');
+		const callerController = new AbortController();
+
+		const fetchMock = globalThis.fetch as jest.MockedFunction<typeof fetch>;
+		fetchMock.mockImplementation((_url, init) => {
+			return new Promise((_, reject) => {
+				(init?.signal as AbortSignal | undefined)?.addEventListener('abort', () => {
+					reject(abortError);
+				});
+			});
+		});
+
+		const promise = fetchWithTimeout('http://localhost:3001/orders', {
+			signal: callerController.signal,
+		});
+		const assertion = expect(promise).rejects.toThrow('The operation was aborted.');
+
+		callerController.abort();
+		await assertion;
+	});
+
 	it('clears timeout in finally even when fetch fails', async () => {
 		const clearTimeoutSpy = jest.spyOn(globalThis, 'clearTimeout');
 		const fetchMock = globalThis.fetch as jest.MockedFunction<typeof fetch>;

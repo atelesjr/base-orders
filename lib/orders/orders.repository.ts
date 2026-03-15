@@ -15,9 +15,9 @@ export const findAllOrders: () => Promise<Order[]> = async () => {
 	return response.json();
 };
 
-type FindOrdersByStatus = (status: string) => Promise<Order | null>;
+type FindOrderById = (id: string) => Promise<Order | null>;
 
-export const findOrderById: FindOrdersByStatus = async (id) => {
+export const findOrderById: FindOrderById = async (id) => {
 	const response = await fetchWithTimeout(`${env.apiBaseUrl}/orders/${id}`, {
 		cache: 'no-store',
 	});

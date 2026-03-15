@@ -12,19 +12,26 @@ export const OrdersGridPagination = ({
 		<div
 			className={`orders-grid__pagination ${className}`.trim()}
 			role="navigation"
-			aria-label="Paginacao da tabela"
+			aria-label="Paginação da tabela"
 		>
 			{prevHref ? (
-				<Link className="orders-grid__page-button" href={prevHref} aria-label="Pagina anterior">
+				<Link
+					className="orders-grid__page-button"
+					href={prevHref}
+					aria-label="Página anterior"
+				>
 					<Image
 						src="/assets/arrow_circle_left_60dp.svg"
-						alt="Pagina anterior"
+						alt="Página anterior"
 						width={28}
 						height={28}
 					/>
 				</Link>
 			) : (
-				<span className="orders-grid__page-button orders-grid__page-button--disabled" aria-hidden="true">
+				<span
+					className="orders-grid__page-button orders-grid__page-button--disabled"
+					aria-hidden="true"
+				>
 					<Image
 						src="/assets/arrow_circle_left_60dp.svg"
 						alt=""
@@ -39,16 +46,23 @@ export const OrdersGridPagination = ({
 			</p>
 
 			{nextHref ? (
-				<Link className="orders-grid__page-button" href={nextHref} aria-label="Proxima pagina">
+				<Link
+					className="orders-grid__page-button"
+					href={nextHref}
+					aria-label="Próxima página"
+				>
 					<Image
 						src="/assets/arrow_circle_right_60dp.svg"
-						alt="Proxima pagina"
+						alt="Próxima página"
 						width={28}
 						height={28}
 					/>
 				</Link>
 			) : (
-				<span className="orders-grid__page-button orders-grid__page-button--disabled" aria-hidden="true">
+				<span
+					className="orders-grid__page-button orders-grid__page-button--disabled"
+					aria-hidden="true"
+				>
 					<Image
 						src="/assets/arrow_circle_right_60dp.svg"
 						alt=""

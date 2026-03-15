@@ -1,5 +1,8 @@
 export const formatTimestampBR = (value: string | number | Date): string => {
 	const date = new Date(value);
+	if (Number.isNaN(date.getTime())) {
+		return '--';
+	}
 
 	const parts = new Intl.DateTimeFormat('pt-BR', {
 		day: '2-digit',

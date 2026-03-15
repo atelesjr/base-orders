@@ -14,7 +14,8 @@ const OrderGridWithPagination = async ({
 	pageSize = 15,
 }: OrderGridWithPaginationProps) => {
 	const resolvedSearchParams = await searchParams;
-	const requestedPage = Number(resolvedSearchParams.page ?? '1');
+	const parsedPage = Number.parseInt(resolvedSearchParams.page ?? '1', 10);
+	const requestedPage = Number.isNaN(parsedPage) ? 1 : parsedPage;
 
 	const { items, currentPage, totalPages, prevPage, nextPage } =
 		await getPaginatedOrdersForGrid(requestedPage, pageSize);

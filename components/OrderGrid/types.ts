@@ -11,6 +11,7 @@ export type OrdersGridColumn = {
 export type OrdersGridProps = {
 	orders: Order[];
 	columns?: OrdersGridColumn[];
+	onRowClick?: (order: Order) => void;
 };
 
 export type OrdersGridPaginationData = {
@@ -35,6 +36,7 @@ export type OrdersGridHeadProps = {
 export type OrdersGridBodyProps = {
 	orders: Order[];
 	columns: OrdersGridColumn[];
+	onRowClick?: (order: Order) => void;
 };
 
 export type OrdersGridPaginationProps = {

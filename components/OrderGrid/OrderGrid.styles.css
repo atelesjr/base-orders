@@ -52,7 +52,11 @@
 }
 
 .orders-grid__table tbody .orders-grid__row {
-	@apply cursor-pointer transition-colors hover:bg-green active:bg-green-dark;
+	@apply transition-colors;
+}
+
+.orders-grid__table tbody .orders-grid__row--clickable {
+	@apply cursor-pointer hover:bg-green active:bg-green-dark;
 }
 
 .orders-grid__pagination {

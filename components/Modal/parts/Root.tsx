@@ -10,6 +10,7 @@ export const ModalRoot = ({
 	children,
 	closeOnOverlayClick = true,
 	closeOnEsc = true,
+	lockBodyScroll = false,
 	className,
 }: ModalRootProps) => {
 	const titleId = useId();
@@ -20,7 +21,7 @@ export const ModalRoot = ({
 		onClose: () => onOpenChange(false),
 	});
 
-	useBodyScrollLock(open);
+	useBodyScrollLock(open && lockBodyScroll);
 
 	if (!open) {
 		return null;

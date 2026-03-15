@@ -6,6 +6,7 @@ export type ModalRootProps = {
 	children: ReactNode;
 	closeOnOverlayClick?: boolean;
 	closeOnEsc?: boolean;
+	lockBodyScroll?: boolean;
 	className?: string;
 };
 

@@ -21,7 +21,7 @@
 }
 
 .modal__title {
-	@apply text-grid-base font-semibold text-black;
+	@apply text-grid-sm font-semibold text-black;
 }
 
 .modal__body {
@@ -33,7 +33,7 @@
 }
 
 .modal__close-button {
-	@apply inline-flex items-center justify-center rounded border border-black px-3 py-1 text-grid-sm text-black transition-colors hover:bg-gray-light;
+	@apply inline-flex cursor-pointer items-center justify-center bg-transparent p-0 text-black transition-opacity hover:opacity-80;
 }
 
 @media (max-width: 640px) {

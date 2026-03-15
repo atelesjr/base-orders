@@ -19,6 +19,11 @@ const OrdersGrid = (({ orders, columns = defaultColumns }: OrdersGridProps) => {
 	return (
 		<OrdersGridRoot>
 			<OrdersGridTable>
+				<colgroup>
+					{columns.map((column) => (
+						<col key={column.key} style={{ width: column.width ?? 'auto' }} />
+					))}
+				</colgroup>
 				<OrdersGridHead columns={columns} />
 				<OrdersGridBody columns={columns} orders={orders} />
 			</OrdersGridTable>

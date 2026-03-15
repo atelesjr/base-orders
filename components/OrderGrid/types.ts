@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 export type OrdersGridColumn = {
 	key: string;
 	label: string;
+	width?: string;
 	render: (order: Order) => ReactNode;
 };
 

@@ -7,6 +7,7 @@
 
 	--color-black: #000000;
 	--color-blue: #64b5f6;
+	--color-gray-dark: #a9a9a9;
 	--color-gray: #e3e3e3;
 	--color-green: #98d4a5;
 	--color-green-dark: #7db989;
@@ -21,6 +22,10 @@
 	/* Responsive font sizes using clamp(min, ideal, max) */
 	/* Base: 11px (mobile) → fluid scale → 16px (desktop) */
 	--font-size-base: clamp(1.1rem, 1rem + 0.5vw, 1.6rem);
+	/* Small: 10px (mobile) → fluid scale → 14px (desktop) */
+	--text-grid-sm: clamp(1rem, 0.9rem + 0.4vw, 1.4rem);
+	/* Extra Small: 10px (mobile) → fluid scale → 12px (desktop) */
+	--text-grid-xm: clamp(1rem, 0.9rem + 0.4vw, 1.2rem);
 	/* H1: 26px (mobile) → fluid scale → 38px (desktop) */
 	--h1-size: clamp(2.6rem, 2rem + 2.5vw, 3.8rem);
 	/* H2: 20px (mobile) → fluid scale → 28px (desktop) */

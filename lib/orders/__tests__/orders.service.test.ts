@@ -65,4 +65,65 @@ describe('orders.service', () => {
 		expect(result.prevPage).toBeUndefined();
 		expect(result.nextPage).toBeUndefined();
 	});
+
+	it('sorts by price ascending before pagination', async () => {
+		mockedFindAllOrders.mockResolvedValue([
+			makeOrder({ id: '1', price: 15.2 }),
+			makeOrder({ id: '2', price: 9.5 }),
+			makeOrder({ id: '3', price: 11.0 }),
+		]);
+
+		const result = await getPaginatedOrdersForGrid(1, 15, 'price', 'asc');
+
+		expect(result.items.map((order) => order.id)).toEqual(['2', '3', '1']);
+	});
+
+	it('sorts by status descending using market priority', async () => {
+		mockedFindAllOrders.mockResolvedValue([
+			makeOrder({ id: '1', status: 'Executada' }),
+			makeOrder({ id: '2', status: 'Aberta' }),
+			makeOrder({ id: '3', status: 'Cancelada' }),
+			makeOrder({ id: '4', status: 'Parcial' }),
+		]);
+
+		const result = await getPaginatedOrdersForGrid(1, 15, 'status', 'desc');
+
+		expect(result.items.map((order) => order.id)).toEqual(['2', '4', '1', '3']);
+	});
+
+	it('sorts by instrument ascending before pagination', async () => {
+		mockedFindAllOrders.mockResolvedValue([
+			makeOrder({ id: '1', instrument: 'VALE3' }),
+			makeOrder({ id: '2', instrument: 'ABEV3' }),
+			makeOrder({ id: '3', instrument: 'PETR4' }),
+		]);
+
+		const result = await getPaginatedOrdersForGrid(1, 15, 'instrument', 'asc');
+
+		expect(result.items.map((order) => order.id)).toEqual(['2', '3', '1']);
+	});
+
+	it('sorts by quantity descending before pagination', async () => {
+		mockedFindAllOrders.mockResolvedValue([
+			makeOrder({ id: '1', quantity: 100 }),
+			makeOrder({ id: '2', quantity: 500 }),
+			makeOrder({ id: '3', quantity: 300 }),
+		]);
+
+		const result = await getPaginatedOrdersForGrid(1, 15, 'quantity', 'desc');
+
+		expect(result.items.map((order) => order.id)).toEqual(['2', '3', '1']);
+	});
+
+	it('uses default sort (timestamp desc) when sort params are omitted', async () => {
+		mockedFindAllOrders.mockResolvedValue([
+			makeOrder({ id: '1', timestamp: '2026-03-15T10:00:00Z' }),
+			makeOrder({ id: '2', timestamp: '2026-03-15T12:00:00Z' }),
+			makeOrder({ id: '3', timestamp: '2026-03-15T11:00:00Z' }),
+		]);
+
+		const result = await getPaginatedOrdersForGrid(1, 15);
+
+		expect(result.items.map((order) => order.id)).toEqual(['2', '3', '1']);
+	});
 });

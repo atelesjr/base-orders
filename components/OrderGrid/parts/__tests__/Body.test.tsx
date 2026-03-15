@@ -65,7 +65,7 @@ describe('OrdersGridBody', () => {
 		const order = makeOrder({ id: '1', instrument: 'PETR4' });
 		const onRowClick = jest.fn();
 
-		const { container } = render(
+		render(
 			<table>
 				<OrdersGridBody
 					columns={columns}
@@ -75,12 +75,12 @@ describe('OrdersGridBody', () => {
 			</table>,
 		);
 
-		const row = container.querySelector('tbody tr');
+		const row = screen.getByRole('button');
 		expect(row).toHaveAttribute('tabindex', '0');
 		expect(row).toHaveAttribute('role', 'button');
 
-		fireEvent.keyDown(row as Element, { key: 'Enter' });
-		fireEvent.keyDown(row as Element, { key: ' ' });
+		fireEvent.keyDown(row, { key: 'Enter' });
+		fireEvent.keyDown(row, { key: ' ' });
 
 		expect(onRowClick).toHaveBeenCalledTimes(2);
 		expect(onRowClick).toHaveBeenNthCalledWith(1, order);

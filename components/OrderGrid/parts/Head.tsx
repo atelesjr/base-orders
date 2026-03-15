@@ -14,13 +14,17 @@ export const OrdersGridHead = ({ columns, sortState }: OrdersGridHeadProps) => {
 						sortState && column.sortKey && sortState.sortBy === column.sortKey,
 					);
 					const ariaSort = isActive
-						? sortState?.sortDir === 'asc'
+						? sortState && sortState.sortDir === 'asc'
 							? 'ascending'
 							: 'descending'
-						: 'none';
+						: undefined;
 
 					return (
-						<th aria-sort={ariaSort} className="orders-grid__th" key={column.key}>
+						<th
+							aria-sort={ariaSort}
+							className="orders-grid__th"
+							key={column.key}
+						>
 							{sortHref && column.sortKey ? (
 								<Link
 									aria-label={`Ordenar por ${column.label}`}
@@ -28,8 +32,15 @@ export const OrdersGridHead = ({ columns, sortState }: OrdersGridHeadProps) => {
 									href={sortHref}
 								>
 									<span>{column.label}</span>
-									<span aria-hidden="true" className="orders-grid__sort-indicator">
-										{isActive ? (sortState?.sortDir === 'asc' ? '▲' : '▼') : '↕'}
+									<span
+										aria-hidden="true"
+										className="orders-grid__sort-indicator"
+									>
+										{isActive
+											? sortState?.sortDir === 'asc'
+												? '▲'
+												: '▼'
+											: '↕'}
 									</span>
 								</Link>
 							) : (

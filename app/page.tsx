@@ -1,36 +1,19 @@
-import { ordersService } from '@/services/orders.service';
+import OrderGridWithPagination from '@/components/OrderGrid/OrderGridWithPagination';
 import Header from '@/components/Header';
 
-export default async function Home() {
-	// Fetch orders from json-server
-	const orders = await ordersService.getOrders();
+type HomeProps = {
+	searchParams: Promise<{
+		page?: string;
+	}>;
+};
 
-	// Log orders to console
-	console.log('Orders from db.json:', orders);
-	console.log('Total orders:', orders.length);
-
+export default async function Home({ searchParams }: HomeProps) {
 	return (
 		<div className="page-container">
 			<Header />
 			<main className="main">
-				<h1>Sobre nós</h1>
-				<h2>Sobre nós</h2>
-				<h3>Sobre nós</h3>
-				<h4>Sobre nós</h4>
-				<p>
-					A Base Finanças, atua desde 2017 criando soluções para uma melhor
-					gestão financeira de pequenas e médias empresas. Somos especialistas
-					em negócios da economia real como indústrias, varejo e prestadoras de
-					serviços, trazendo mais segurança e clareza para as tomadas de decisão
-					mais importantes.
-				</p>
-				<p>
-					A Base Finanças, atua desde 2017 criando soluções para uma melhor
-					gestão financeira de pequenas e médias empresas. Somos especialistas
-					em negócios da economia real como indústrias, varejo e prestadoras de
-					serviços, trazendo mais segurança e clareza para as tomadas de decisão
-					mais importantes.
-				</p>
+				<h1>Gerenciamento de ordens</h1>
+				<OrderGridWithPagination searchParams={searchParams} />
 			</main>
 		</div>
 	);

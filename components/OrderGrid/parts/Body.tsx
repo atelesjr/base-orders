@@ -14,14 +14,13 @@ export const OrdersGridBody = ({
 				onKeyDown={
 					onRowClick
 						? (event) => {
-							if (event.key === 'Enter' || event.key === ' ') {
-								event.preventDefault();
-								onRowClick(order);
+								if (event.key === 'Enter' || event.key === ' ') {
+									event.preventDefault();
+									onRowClick(order);
+								}
 							}
-						}
 						: undefined
 				}
-				role={onRowClick ? 'button' : undefined}
 				tabIndex={onRowClick ? 0 : undefined}
 			>
 				{columns.map((column) => (

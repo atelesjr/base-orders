@@ -75,9 +75,9 @@ describe('OrdersGridBody', () => {
 			</table>,
 		);
 
-		const row = screen.getByRole('button');
+		const row = screen.getByRole('row');
 		expect(row).toHaveAttribute('tabindex', '0');
-		expect(row).toHaveAttribute('role', 'button');
+		expect(row).not.toHaveAttribute('role', 'button');
 
 		fireEvent.keyDown(row, { key: 'Enter' });
 		fireEvent.keyDown(row, { key: ' ' });

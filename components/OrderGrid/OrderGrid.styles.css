@@ -35,6 +35,18 @@
 	@apply font-semibold bg-black text-white;
 }
 
+.orders-grid__sort-link {
+	@apply inline-flex w-full items-center justify-between gap-2 text-white no-underline;
+}
+
+.orders-grid__sort-link--active {
+	@apply font-semibold;
+}
+
+.orders-grid__sort-indicator {
+	@apply text-grid-xm;
+}
+
 .orders-grid__td {
 	@apply text-grid-xm;
 }

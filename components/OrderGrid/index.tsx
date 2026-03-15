@@ -19,6 +19,7 @@ const OrdersGrid = (({
 	orders,
 	columns = defaultColumns,
 	onRowClick,
+	sortState,
 }: OrdersGridProps) => {
 	return (
 		<OrdersGridRoot>
@@ -28,7 +29,7 @@ const OrdersGrid = (({
 						<col key={column.key} style={{ width: column.width ?? 'auto' }} />
 					))}
 				</colgroup>
-				<OrdersGridHead columns={columns} />
+				<OrdersGridHead columns={columns} sortState={sortState} />
 				<OrdersGridBody columns={columns} onRowClick={onRowClick} orders={orders} />
 			</OrdersGridTable>
 		</OrdersGridRoot>

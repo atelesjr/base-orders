@@ -1,5 +1,12 @@
-import type { Order } from './orders.types';
+import {
+	DEFAULT_ORDERS_SORT_BY,
+	DEFAULT_ORDERS_SORT_DIR,
+	DEFAULT_PAGE_SIZE,
+} from './orders.constants';
 import { findAllOrders } from './orders.repository';
+import { getSortedOrders } from './orders.sort';
+import type { OrdersSortBy, OrdersSortDir } from './orders.sort.types';
+import type { Order } from './orders.types';
 
 type PaginatedOrdersResult = {
 	items: Order[];
@@ -12,16 +19,20 @@ type PaginatedOrdersResult = {
 export const getOrdersForGrid: () => Promise<Order[]> = async () => {
 	const orders = await findAllOrders();
 
-	return [...orders].sort(
-		(a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime(),
+	return getSortedOrders(
+		orders,
+		DEFAULT_ORDERS_SORT_BY,
+		DEFAULT_ORDERS_SORT_DIR,
 	);
 };
 
 export const getPaginatedOrdersForGrid = async (
 	requestedPage: number,
-	pageSize = 15,
+	pageSize = DEFAULT_PAGE_SIZE,
+	sortBy: OrdersSortBy = DEFAULT_ORDERS_SORT_BY,
+	sortDir: OrdersSortDir = DEFAULT_ORDERS_SORT_DIR,
 ): Promise<PaginatedOrdersResult> => {
-	const orders = await getOrdersForGrid();
+	const orders = getSortedOrders(await findAllOrders(), sortBy, sortDir);
 	const safeRequestedPage = Number.isFinite(requestedPage) ? requestedPage : 1;
 	const totalPages = Math.max(1, Math.ceil(orders.length / pageSize));
 	const currentPage = Math.min(Math.max(1, safeRequestedPage), totalPages);

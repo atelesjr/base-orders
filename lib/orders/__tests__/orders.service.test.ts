@@ -65,4 +65,29 @@ describe('orders.service', () => {
 		expect(result.prevPage).toBeUndefined();
 		expect(result.nextPage).toBeUndefined();
 	});
+
+	it('sorts by price ascending before pagination', async () => {
+		mockedFindAllOrders.mockResolvedValue([
+			makeOrder({ id: '1', price: 15.2 }),
+			makeOrder({ id: '2', price: 9.5 }),
+			makeOrder({ id: '3', price: 11.0 }),
+		]);
+
+		const result = await getPaginatedOrdersForGrid(1, 15, 'price', 'asc');
+
+		expect(result.items.map((order) => order.id)).toEqual(['2', '3', '1']);
+	});
+
+	it('sorts by status descending using market priority', async () => {
+		mockedFindAllOrders.mockResolvedValue([
+			makeOrder({ id: '1', status: 'Executada' }),
+			makeOrder({ id: '2', status: 'Aberta' }),
+			makeOrder({ id: '3', status: 'Cancelada' }),
+			makeOrder({ id: '4', status: 'Parcial' }),
+		]);
+
+		const result = await getPaginatedOrdersForGrid(1, 15, 'status', 'desc');
+
+		expect(result.items.map((order) => order.id)).toEqual(['2', '4', '1', '3']);
+	});
 });

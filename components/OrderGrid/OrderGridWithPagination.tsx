@@ -1,9 +1,16 @@
 import { getPaginatedOrdersForGrid } from '@/lib/orders/orders.service';
 import OrderGridWithPaginationClient from './OrderGridWithPaginationClient';
+import {
+	buildOrderGridHref,
+	buildOrderGridSortLinks,
+} from './order-grid.navigation';
+import { resolveOrderGridQuery } from './order-grid.query';
 
 type OrderGridWithPaginationProps = {
 	searchParams: Promise<{
 		page?: string;
+		sortBy?: string;
+		sortDir?: string;
 	}>;
 	pageSize?: number;
 };
@@ -13,23 +20,31 @@ const OrderGridWithPagination = async ({
 	pageSize = 15,
 }: OrderGridWithPaginationProps) => {
 	const resolvedSearchParams = await searchParams;
-	const parsedPage = Number.parseInt(resolvedSearchParams.page ?? '1', 10);
-	const requestedPage = Number.isNaN(parsedPage)
-		? 1
-		: Math.max(1, parsedPage);
+	const { requestedPage, sortBy, sortDir } =
+		resolveOrderGridQuery(resolvedSearchParams);
 
 	const { items, currentPage, totalPages, prevPage, nextPage } =
-		await getPaginatedOrdersForGrid(requestedPage, pageSize);
+		await getPaginatedOrdersForGrid(requestedPage, pageSize, sortBy, sortDir);
+
+	const sortLinks = buildOrderGridSortLinks(sortBy, sortDir);
 
 	const pagination = {
 		currentPage,
 		totalPages,
-		prevHref: prevPage ? `/?page=${prevPage}` : undefined,
-		nextHref: nextPage ? `/?page=${nextPage}` : undefined,
+		prevHref: prevPage
+			? buildOrderGridHref(prevPage, sortBy, sortDir)
+			: undefined,
+		nextHref: nextPage
+			? buildOrderGridHref(nextPage, sortBy, sortDir)
+			: undefined,
 	};
 
 	return (
-		<OrderGridWithPaginationClient orders={items} pagination={pagination} />
+		<OrderGridWithPaginationClient
+			orders={items}
+			pagination={pagination}
+			sortState={{ sortBy, sortDir, sortLinks }}
+		/>
 	);
 };
 

@@ -76,4 +76,23 @@ describe('OrderGrid', () => {
 		expect(OrdersGrid.Body).toBeDefined();
 		expect(OrdersGrid.defaultColumns).toBe(defaultColumns);
 	});
+
+	it('renders sortable header links with active indicator', () => {
+		render(
+			<OrdersGrid
+				orders={[makeOrder({ id: '1', instrument: 'VALE3' })]}
+				sortState={{
+					sortBy: 'price',
+					sortDir: 'desc',
+					sortLinks: {
+						price: '/?page=1&sortBy=price&sortDir=asc',
+					},
+				}}
+			/>,
+		);
+
+		const priceSortLink = screen.getByRole('link', { name: 'Ordenar por Preço' });
+		expect(priceSortLink).toBeInTheDocument();
+		expect(priceSortLink).toHaveTextContent('▼');
+	});
 });

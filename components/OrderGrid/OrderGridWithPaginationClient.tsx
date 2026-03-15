@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import OrderDetailsModal from '@/components/OrderDetailsModal';
 import type { Order } from '@/lib/orders/orders.types';
 import OrdersGrid from './index';
-import type { OrdersGridPaginationData } from './types';
+import type { OrdersGridPaginationData, OrdersGridSortState } from './types';
 import { OrdersGridPagination } from './parts/Pagination';
 
 type SelectionState = {
@@ -15,11 +15,13 @@ type SelectionState = {
 type OrderGridWithPaginationClientProps = {
 	orders: Order[];
 	pagination: OrdersGridPaginationData;
+	sortState: OrdersGridSortState;
 };
 
 const OrderGridWithPaginationClient = ({
 	orders,
 	pagination,
+	sortState,
 }: OrderGridWithPaginationClientProps) => {
 	const dataToken = useMemo(() => Symbol('orders-data-token'), [orders]);
 	const [selection, setSelection] = useState<SelectionState | null>(null);
@@ -43,6 +45,7 @@ const OrderGridWithPaginationClient = ({
 			/>
 			<OrdersGrid
 				orders={orders}
+				sortState={sortState}
 				onRowClick={(order) => {
 					setSelection({ orderId: order.id, dataToken });
 				}}

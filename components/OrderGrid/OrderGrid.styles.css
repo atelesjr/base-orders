@@ -56,9 +56,37 @@
 	@apply cursor-pointer transition-colors hover:bg-green active:bg-green-dark;
 }
 
+.orders-grid__pagination {
+	@apply mt-4 flex items-center justify-end gap-3;
+}
+
+.orders-grid__pagination--top {
+	@apply mt-0 mb-3;
+}
+
+.orders-grid__pagination--bottom {
+	@apply mt-4;
+}
+
+.orders-grid__page-button {
+	@apply inline-flex items-center justify-center rounded-full transition-transform hover:scale-105;
+}
+
+.orders-grid__page-button--disabled {
+	@apply opacity-40 pointer-events-none;
+}
+
+.orders-grid__page-indicator {
+	@apply text-grid-sm text-black;
+}
+
 @media (max-width: 640px) {
 	.orders-grid__th,
 	.orders-grid__td {
 		@apply px-3 py-2;
+	}
+
+	.orders-grid__pagination {
+		@apply justify-center;
 	}
 }

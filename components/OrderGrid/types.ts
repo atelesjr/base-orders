@@ -13,6 +13,13 @@ export type OrdersGridProps = {
 	columns?: OrdersGridColumn[];
 };
 
+export type OrdersGridPaginationData = {
+	currentPage: number;
+	totalPages: number;
+	prevHref?: string;
+	nextHref?: string;
+};
+
 export type OrdersGridRootProps = {
 	children: ReactNode;
 };
@@ -28,4 +35,9 @@ export type OrdersGridHeadProps = {
 export type OrdersGridBodyProps = {
 	orders: Order[];
 	columns: OrdersGridColumn[];
+};
+
+export type OrdersGridPaginationProps = {
+	pagination: OrdersGridPaginationData;
+	className?: string;
 };

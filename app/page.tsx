@@ -1,17 +1,19 @@
-import OrdersGrid from '@/components/OrderGrid';
-import { getOrdersForGrid } from '@/lib/orders/orders.service';
+import OrderGridWithPagination from '@/components/OrderGrid/OrderGridWithPagination';
 import Header from '@/components/Header';
 
-export default async function Home() {
-	// Fetch orders from json-server
-	const orders = await getOrdersForGrid();
+type HomeProps = {
+	searchParams: Promise<{
+		page?: string;
+	}>;
+};
 
+export default async function Home({ searchParams }: HomeProps) {
 	return (
 		<div className="page-container">
 			<Header />
 			<main className="main">
 				<h1>Gerenciamento de ordens</h1>
-				<OrdersGrid orders={orders} />
+				<OrderGridWithPagination searchParams={searchParams} />
 			</main>
 		</div>
 	);

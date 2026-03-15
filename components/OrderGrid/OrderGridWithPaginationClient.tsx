@@ -7,6 +7,11 @@ import OrdersGrid from './index';
 import type { OrdersGridPaginationData } from './types';
 import { OrdersGridPagination } from './parts/Pagination';
 
+type SelectionState = {
+	orderId: string;
+	dataToken: symbol;
+};
+
 type OrderGridWithPaginationClientProps = {
 	orders: Order[];
 	pagination: OrdersGridPaginationData;
@@ -16,11 +21,18 @@ const OrderGridWithPaginationClient = ({
 	orders,
 	pagination,
 }: OrderGridWithPaginationClientProps) => {
-	const [selectedOrderId, setSelectedOrderId] = useState<string | null>(null);
+	const dataToken = useMemo(() => Symbol('orders-data-token'), [orders]);
+	const [selection, setSelection] = useState<SelectionState | null>(null);
 
 	const selectedOrder = useMemo(
-		() => orders.find((order) => order.id === selectedOrderId) ?? null,
-		[orders, selectedOrderId],
+		() => {
+			if (!selection || selection.dataToken !== dataToken) {
+				return null;
+			}
+
+			return orders.find((order) => order.id === selection.orderId) ?? null;
+		},
+		[orders, selection, dataToken],
 	);
 
 	return (
@@ -29,7 +41,12 @@ const OrderGridWithPaginationClient = ({
 				className="orders-grid__pagination--top"
 				pagination={pagination}
 			/>
-			<OrdersGrid orders={orders} onRowClick={(order) => setSelectedOrderId(order.id)} />
+			<OrdersGrid
+				orders={orders}
+				onRowClick={(order) => {
+					setSelection({ orderId: order.id, dataToken });
+				}}
+			/>
 			<OrdersGridPagination
 				className="orders-grid__pagination--bottom"
 				pagination={pagination}
@@ -39,7 +56,7 @@ const OrderGridWithPaginationClient = ({
 				open={Boolean(selectedOrder)}
 				onOpenChange={(nextOpen) => {
 					if (!nextOpen) {
-						setSelectedOrderId(null);
+						setSelection(null);
 					}
 				}}
 				order={selectedOrder}

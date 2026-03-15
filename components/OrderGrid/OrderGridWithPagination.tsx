@@ -27,14 +27,9 @@ const OrderGridWithPagination = async ({
 		prevHref: prevPage ? `/?page=${prevPage}` : undefined,
 		nextHref: nextPage ? `/?page=${nextPage}` : undefined,
 	};
-	const listStateKey = items.map((item) => item.id).join('|');
 
 	return (
-		<OrderGridWithPaginationClient
-			key={listStateKey}
-			orders={items}
-			pagination={pagination}
-		/>
+		<OrderGridWithPaginationClient orders={items} pagination={pagination} />
 	);
 };
 

@@ -31,10 +31,16 @@ const composeAbortSignals = (
 	}
 
 	const controller = new AbortController();
-	const onAbort = () => controller.abort();
+	// const onAbort = () => controller.abort();
+	const onAbort = (event?: Event) => {
+		const source = event?.target as AbortSignal | null;
+		controller.abort(source?.reason);
+	};
 
 	if (callerSignal.aborted || timeoutSignal.aborted) {
-		onAbort();
+		controller.abort(
+			callerSignal.aborted ? callerSignal.reason : timeoutSignal.reason,
+		);
 		return { signal: controller.signal, cleanup: () => {} };
 	}
 
@@ -52,7 +58,10 @@ const composeAbortSignals = (
 
 export const fetchWithTimeout: FetchWithTimeout = async (url, init = {}) => {
 	const timeoutController = new AbortController();
-	const timeout = setTimeout(() => timeoutController.abort(), REQUEST_TIMEOUT_MS);
+	const timeout = setTimeout(
+		() => timeoutController.abort(),
+		REQUEST_TIMEOUT_MS,
+	);
 	const composed = composeAbortSignals(init.signal, timeoutController.signal);
 
 	try {

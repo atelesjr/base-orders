@@ -90,4 +90,18 @@ describe('orders.service', () => {
 
 		expect(result.items.map((order) => order.id)).toEqual(['2', '4', '1', '3']);
 	});
+
+	it('normalizes non-positive and fractional pagination inputs', async () => {
+		mockedFindAllOrders.mockResolvedValue(makeOrders(20));
+
+		const withInvalidPage = await getPaginatedOrdersForGrid(-3, 5.8);
+		expect(withInvalidPage.currentPage).toBe(1);
+		expect(withInvalidPage.totalPages).toBe(4);
+		expect(withInvalidPage.items).toHaveLength(5);
+
+		const withInvalidPageSize = await getPaginatedOrdersForGrid(1.9, 0);
+		expect(withInvalidPageSize.currentPage).toBe(1);
+		expect(withInvalidPageSize.totalPages).toBe(2);
+		expect(withInvalidPageSize.items).toHaveLength(15);
+	});
 });

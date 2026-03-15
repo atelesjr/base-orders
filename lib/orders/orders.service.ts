@@ -33,11 +33,18 @@ export const getPaginatedOrdersForGrid = async (
 	sortDir: OrdersSortDir = DEFAULT_ORDERS_SORT_DIR,
 ): Promise<PaginatedOrdersResult> => {
 	const orders = getSortedOrders(await findAllOrders(), sortBy, sortDir);
-	const safeRequestedPage = Number.isFinite(requestedPage) ? requestedPage : 1;
-	const totalPages = Math.max(1, Math.ceil(orders.length / pageSize));
+	const normalizedPageSize =
+		Number.isFinite(pageSize) && pageSize > 0
+			? Math.floor(pageSize)
+			: DEFAULT_PAGE_SIZE;
+	const safeRequestedPage =
+		Number.isFinite(requestedPage) && requestedPage > 0
+			? Math.floor(requestedPage)
+			: 1;
+	const totalPages = Math.max(1, Math.ceil(orders.length / normalizedPageSize));
 	const currentPage = Math.min(Math.max(1, safeRequestedPage), totalPages);
-	const startIndex = (currentPage - 1) * pageSize;
-	const items = orders.slice(startIndex, startIndex + pageSize);
+	const startIndex = (currentPage - 1) * normalizedPageSize;
+	const items = orders.slice(startIndex, startIndex + normalizedPageSize);
 
 	return {
 		items,

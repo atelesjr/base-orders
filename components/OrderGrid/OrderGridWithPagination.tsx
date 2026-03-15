@@ -4,14 +4,13 @@ import {
 	buildOrderGridHref,
 	buildOrderGridSortLinks,
 } from './order-grid.navigation';
-import { resolveOrderGridQuery } from './order-grid.query';
+import {
+	resolveOrderGridQuery,
+	type OrderGridQueryParams,
+} from './order-grid.query';
 
 type OrderGridWithPaginationProps = {
-	searchParams: Promise<{
-		page?: string;
-		sortBy?: string;
-		sortDir?: string;
-	}>;
+	searchParams: Promise<OrderGridQueryParams>;
 	pageSize?: number;
 };
 

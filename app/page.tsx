@@ -1,10 +1,9 @@
 import OrderGridWithPagination from '@/components/OrderGrid/OrderGridWithPagination';
+import type { OrderGridQueryParams } from '@/components/OrderGrid/order-grid.query';
 import Header from '@/components/Header';
 
 type HomeProps = {
-	searchParams: Promise<{
-		page?: string;
-	}>;
+	searchParams: Promise<OrderGridQueryParams>;
 };
 
 export default async function Home({ searchParams }: HomeProps) {

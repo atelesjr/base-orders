@@ -1,10 +1,13 @@
 import {
 	resolveOrdersSortBy,
 	resolveOrdersSortDir,
-	} from '@/lib/orders/orders.sort';
-import type { OrdersSortBy, OrdersSortDir } from '@/lib/orders/orders.sort.types';
+} from '@/lib/orders/orders.sort';
+import type {
+	OrdersSortBy,
+	OrdersSortDir,
+} from '@/lib/orders/orders.sort.types';
 
-type OrderGridQueryParams = {
+export type OrderGridQueryParams = {
 	page?: string;
 	sortBy?: string;
 	sortDir?: string;
@@ -19,9 +22,9 @@ export type ResolvedOrderGridQuery = {
 export const resolveOrderGridQuery = (
 	query: OrderGridQueryParams,
 ): ResolvedOrderGridQuery => {
-	const parsedPage = Number.parseInt(query.page ?? '1', 10);
-	const requestedPage = Number.isNaN(parsedPage) ? 1 : Math.max(1, parsedPage);
-
+	const parsedPage = Number(query.page);
+	const requestedPage =
+		Number.isInteger(parsedPage) && parsedPage > 0 ? parsedPage : 1;
 	return {
 		requestedPage,
 		sortBy: resolveOrdersSortBy(query.sortBy),

@@ -119,7 +119,10 @@ export const OrdersGridFilterDatePicker = ({
 	}, [isOpen]);
 
 	const monthLabel = useMemo(() => getMonthLabel(displayDate), [displayDate]);
-	const calendarCells = useMemo(() => buildCalendarCells(displayDate), [displayDate]);
+	const calendarCells = useMemo(
+		() => buildCalendarCells(displayDate),
+		[displayDate],
+	);
 
 	const selectedIsoDate = value;
 	const todayIsoDate = toIsoDate(new Date());
@@ -143,9 +146,13 @@ export const OrdersGridFilterDatePicker = ({
 			</button>
 
 			{isOpen ? (
-				<div className="orders-grid__date-picker-popover" role="dialog">
+				<div
+					aria-labelledby={`${id}-month`}
+					className="orders-grid__date-picker-popover"
+					role="dialog"
+				>
 					<div className="orders-grid__date-picker-header">
-						<strong>{monthLabel}</strong>
+						<strong id={`${id}-month`}>{monthLabel}</strong>
 						<div className="orders-grid__date-picker-nav">
 							<button
 								aria-label="Mês anterior"
@@ -200,12 +207,8 @@ export const OrdersGridFilterDatePicker = ({
 										!cell.isCurrentMonth
 											? 'orders-grid__date-picker-day--outside'
 											: ''
-									} ${
-										isToday ? 'orders-grid__date-picker-day--today' : ''
-									} ${
-										isSelected
-											? 'orders-grid__date-picker-day--selected'
-											: ''
+									} ${isToday ? 'orders-grid__date-picker-day--today' : ''} ${
+										isSelected ? 'orders-grid__date-picker-day--selected' : ''
 									}`.trim()}
 									key={cellIsoDate}
 									onClick={() => {

@@ -93,4 +93,21 @@ describe('OrderGridWithPaginationClient', () => {
 
 		expect(screen.getByText('READL3 nao encontrado.')).toBeInTheDocument();
 	});
+
+	it('shows generic empty-state message when no filters are active', () => {
+		render(
+			<OrderGridWithPaginationClient
+				filters={{}}
+				orders={[]}
+				pagination={{ currentPage: 1, totalPages: 1 }}
+				sortState={{
+					sortBy: 'timestamp',
+					sortDir: 'desc',
+					sortLinks: { timestamp: '/?page=1&sortBy=timestamp&sortDir=asc' },
+				}}
+			/>,
+		);
+
+		expect(screen.getByText('Nenhuma ordem encontrada.')).toBeInTheDocument();
+	});
 });

@@ -1,6 +1,5 @@
 'use client';
 
-import { useMemo, useState } from 'react';
 import OrderDetailsModal from '@/components/OrderDetailsModal';
 import type { Order } from '@/lib/orders/orders.types';
 import OrdersGrid from './index';
@@ -12,11 +11,7 @@ import type {
 import { OrdersGridFiltersBar } from './parts/FiltersBar';
 import { OrdersGridPagination } from './parts/Pagination';
 import { OrdersGridToolbar } from './parts/Toolbar';
-
-type SelectionState = {
-	orderId: string;
-	dataToken: symbol;
-};
+import { useOrderGridWithPaginationController } from './useOrderGridWithPaginationController';
 
 type OrderGridWithPaginationClientProps = {
 	orders: Order[];
@@ -31,37 +26,20 @@ const OrderGridWithPaginationClient = ({
 	pagination,
 	sortState,
 }: OrderGridWithPaginationClientProps) => {
-	const dataToken = useMemo(() => Symbol('orders-data-token'), [orders]);
-	const [selection, setSelection] = useState<SelectionState | null>(null);
-	const [isFiltersOpen, setIsFiltersOpen] = useState(false);
-
-	const selectedOrder = useMemo(() => {
-		if (!selection || selection.dataToken !== dataToken) {
-			return null;
-		}
-
-		return orders.find((order) => order.id === selection.orderId) ?? null;
-	}, [orders, selection, dataToken]);
-
-	const emptyStateMessage = useMemo(() => {
-		if (filters.instrument) {
-			return `${filters.instrument} nao encontrado.`;
-		}
-
-		if (filters.id) {
-			return `ID ${filters.id} nao encontrado.`;
-		}
-
-		return 'Nenhuma ordem encontrada para os filtros aplicados.';
-	}, [filters]);
+	const {
+		isFiltersOpen,
+		selectedOrder,
+		emptyStateMessage,
+		toggleFilters,
+		handleRowClick,
+		handleModalOpenChange,
+	} = useOrderGridWithPaginationController({ orders, filters });
 
 	return (
 		<>
 			<OrdersGridToolbar
 				isFiltersOpen={isFiltersOpen}
-				onFilterClick={() => {
-					setIsFiltersOpen((currentState) => !currentState);
-				}}
+				onFilterClick={toggleFilters}
 				pagination={pagination}
 			/>
 
@@ -76,9 +54,7 @@ const OrderGridWithPaginationClient = ({
 				emptyStateMessage={emptyStateMessage}
 				orders={orders}
 				sortState={sortState}
-				onRowClick={(order) => {
-					setSelection({ orderId: order.id, dataToken });
-				}}
+				onRowClick={handleRowClick}
 			/>
 			<OrdersGridPagination
 				className="orders-grid__pagination--bottom"
@@ -87,11 +63,7 @@ const OrderGridWithPaginationClient = ({
 
 			<OrderDetailsModal
 				open={Boolean(selectedOrder)}
-				onOpenChange={(nextOpen) => {
-					if (!nextOpen) {
-						setSelection(null);
-					}
-				}}
+				onOpenChange={handleModalOpenChange}
 				order={selectedOrder}
 			/>
 		</>

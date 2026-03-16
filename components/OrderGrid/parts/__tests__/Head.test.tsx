@@ -44,4 +44,41 @@ describe('OrdersGridHead', () => {
 
 		expect(screen.queryAllByRole('columnheader')).toHaveLength(0);
 	});
+
+	it('applies aria-sort only to the actively sorted column', () => {
+		const columns: OrdersGridColumn[] = [
+			{
+				key: 'instrument',
+				label: 'Instrumento',
+				sortKey: 'instrument',
+				render: (order) => order.instrument,
+			},
+			{
+				key: 'price',
+				label: 'Preço',
+				sortKey: 'price',
+				render: (order) => order.price,
+			},
+		];
+
+		render(
+			<table>
+				<OrdersGridHead
+					columns={columns}
+					sortState={{
+						sortBy: 'price',
+						sortDir: 'desc',
+						sortLinks: {
+							instrument: '/?page=1&sortBy=instrument&sortDir=asc',
+							price: '/?page=1&sortBy=price&sortDir=asc',
+						},
+					}}
+				/>
+			</table>,
+		);
+
+		const headers = screen.getAllByRole('columnheader');
+		expect(headers[0]).not.toHaveAttribute('aria-sort');
+		expect(headers[1]).toHaveAttribute('aria-sort', 'descending');
+	});
 });

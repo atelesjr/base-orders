@@ -36,7 +36,7 @@ describe('OrdersGridBody', () => {
 		expect(container.querySelectorAll('tbody td')).toHaveLength(4);
 	});
 
-	it('renders no rows when orders are empty', () => {
+	it('renders empty-state row when orders are empty', () => {
 		const columns: OrdersGridColumn[] = [
 			{
 				key: 'instrument',
@@ -51,7 +51,30 @@ describe('OrdersGridBody', () => {
 			</table>,
 		);
 
-		expect(container.querySelectorAll('tbody tr')).toHaveLength(0);
+		expect(container.querySelectorAll('tbody tr')).toHaveLength(1);
+		expect(screen.getByText('Nenhuma ordem encontrada.')).toBeInTheDocument();
+	});
+
+	it('renders custom empty-state message', () => {
+		const columns: OrdersGridColumn[] = [
+			{
+				key: 'instrument',
+				label: 'Instrumento',
+				render: (order) => order.instrument,
+			},
+		];
+
+		render(
+			<table>
+				<OrdersGridBody
+					columns={columns}
+					emptyStateMessage="READL3 nao encontrado."
+					orders={[]}
+				/>
+			</table>,
+		);
+
+		expect(screen.getByText('READL3 nao encontrado.')).toBeInTheDocument();
 	});
 
 	it('supports keyboard activation when row is clickable', () => {

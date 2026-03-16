@@ -1,10 +1,11 @@
-import { getPaginatedOrdersForGrid } from '@/lib/orders/orders.service';
 import OrderGridWithPaginationClient from './OrderGridWithPaginationClient';
+import {
+	buildOrderGridWithPaginationViewModel,
+} from './order-grid-with-pagination.presenter';
+import { type OrderGridQueryParams } from './order-grid.query';
 
 type OrderGridWithPaginationProps = {
-	searchParams: Promise<{
-		page?: string;
-	}>;
+	searchParams: Promise<OrderGridQueryParams>;
 	pageSize?: number;
 };
 
@@ -12,24 +13,18 @@ const OrderGridWithPagination = async ({
 	searchParams,
 	pageSize = 15,
 }: OrderGridWithPaginationProps) => {
-	const resolvedSearchParams = await searchParams;
-	const parsedPage = Number.parseInt(resolvedSearchParams.page ?? '1', 10);
-	const requestedPage = Number.isNaN(parsedPage)
-		? 1
-		: Math.max(1, parsedPage);
-
-	const { items, currentPage, totalPages, prevPage, nextPage } =
-		await getPaginatedOrdersForGrid(requestedPage, pageSize);
-
-	const pagination = {
-		currentPage,
-		totalPages,
-		prevHref: prevPage ? `/?page=${prevPage}` : undefined,
-		nextHref: nextPage ? `/?page=${nextPage}` : undefined,
-	};
+	const viewModel = await buildOrderGridWithPaginationViewModel({
+		searchParams: await searchParams,
+		pageSize,
+	});
 
 	return (
-		<OrderGridWithPaginationClient orders={items} pagination={pagination} />
+		<OrderGridWithPaginationClient
+			orders={viewModel.orders}
+			filters={viewModel.filters}
+			pagination={viewModel.pagination}
+			sortState={viewModel.sortState}
+		/>
 	);
 };
 

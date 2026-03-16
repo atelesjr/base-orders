@@ -11,8 +11,12 @@ describe('OrderGrid', () => {
 		render(<OrdersGrid orders={orders} />);
 
 		expect(screen.getByRole('table')).toBeInTheDocument();
+		const headers = screen.getAllByRole('columnheader');
+		expect(headers[0]).toHaveTextContent('ID');
+		expect(headers[1]).toHaveTextContent('Instrumento');
 		expect(screen.getByText('Instrumento')).toBeInTheDocument();
 		expect(screen.getByText('Data/Hora')).toBeInTheDocument();
+		expect(screen.getByText('1')).toBeInTheDocument();
 		expect(screen.getByText('VALE3')).toBeInTheDocument();
 	});
 
@@ -45,11 +49,12 @@ describe('OrderGrid', () => {
 		expect(cols[1]).toHaveStyle({ width: 'auto' });
 	});
 
-	it('renders no body rows when orders list is empty', () => {
+	it('renders empty-state row when orders list is empty', () => {
 		const { container } = render(<OrdersGrid orders={[]} />);
 
 		expect(screen.getByRole('table')).toBeInTheDocument();
-		expect(container.querySelectorAll('tbody tr')).toHaveLength(0);
+		expect(container.querySelectorAll('tbody tr')).toHaveLength(1);
+		expect(screen.getByText('Nenhuma ordem encontrada.')).toBeInTheDocument();
 	});
 
 	it('calls onRowClick when a row is clicked', () => {
@@ -75,5 +80,24 @@ describe('OrderGrid', () => {
 		expect(OrdersGrid.Head).toBeDefined();
 		expect(OrdersGrid.Body).toBeDefined();
 		expect(OrdersGrid.defaultColumns).toBe(defaultColumns);
+	});
+
+	it('renders sortable header links with active indicator', () => {
+		render(
+			<OrdersGrid
+				orders={[makeOrder({ id: '1', instrument: 'VALE3' })]}
+				sortState={{
+					sortBy: 'price',
+					sortDir: 'desc',
+					sortLinks: {
+						price: '/?page=1&sortBy=price&sortDir=asc',
+					},
+				}}
+			/>,
+		);
+
+		const priceSortLink = screen.getByRole('link', { name: 'Ordenar por Preço' });
+		expect(priceSortLink).toBeInTheDocument();
+		expect(priceSortLink).toHaveTextContent('▼');
 	});
 });

@@ -4,8 +4,17 @@ export const OrdersGridBody = ({
 	orders,
 	columns,
 	onRowClick,
+	emptyStateMessage = 'Nenhuma ordem encontrada.',
 }: OrdersGridBodyProps) => (
 	<tbody>
+		{orders.length === 0 ? (
+			<tr className="orders-grid__row">
+				<td className="orders-grid__empty-state" colSpan={columns.length}>
+					{emptyStateMessage}
+				</td>
+			</tr>
+		) : null}
+
 		{orders.map((order) => (
 			<tr
 				className={`orders-grid__row${onRowClick ? ' orders-grid__row--clickable' : ''}`}

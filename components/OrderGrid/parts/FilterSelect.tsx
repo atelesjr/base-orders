@@ -40,17 +40,26 @@ export const OrdersGridFilterSelect = ({
 		};
 	}, []);
 
+	const fallbackOption: FilterSelectOption = {
+		label: 'Sem opcoes',
+		value: '',
+	};
 	const selectedOption =
-		options.find((option) => option.value === value) ?? options[0];
+		options.find((option) => option.value === value) ??
+		options[0] ??
+		fallbackOption;
+	const effectiveValue = selectedOption.value;
+	const hasOptions = options.length > 0;
 
 	return (
 		<div className="orders-grid__filter-select" ref={wrapperRef}>
-			<input name={name} type="hidden" value={value} />
+			<input name={name} type="hidden" value={effectiveValue} />
 			<button
 				aria-expanded={isOpen}
 				aria-haspopup="listbox"
 				aria-label={ariaLabel}
 				className="orders-grid__filter-select-trigger"
+				disabled={!hasOptions}
 				id={id}
 				onClick={() => {
 					setIsOpen((currentState) => !currentState);
@@ -61,7 +70,7 @@ export const OrdersGridFilterSelect = ({
 				<span aria-hidden="true">▾</span>
 			</button>
 
-			{isOpen ? (
+			{isOpen && hasOptions ? (
 				<ul
 					aria-labelledby={id}
 					className="orders-grid__filter-select-menu"
@@ -69,13 +78,13 @@ export const OrdersGridFilterSelect = ({
 				>
 					{options.map((option) => (
 						<li
-							aria-selected={option.value === value}
+							aria-selected={option.value === effectiveValue}
 							key={option.value}
 							role="option"
 						>
 							<button
 								className={`orders-grid__filter-select-option ${
-									option.value === value
+									option.value === effectiveValue
 										? 'orders-grid__filter-select-option--selected'
 										: ''
 								}`.trim()}

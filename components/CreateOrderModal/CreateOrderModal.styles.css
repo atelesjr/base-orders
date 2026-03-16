@@ -1,0 +1,26 @@
+@reference '../../styles/globals.css';
+
+.create-order-modal__form {
+	@apply grid grid-cols-1 gap-3;
+}
+
+.create-order-modal__field {
+	@apply flex flex-col gap-1 text-grid-sm text-black;
+}
+
+.create-order-modal__field input,
+.create-order-modal__field select {
+	@apply h-9 rounded border border-black bg-white px-2 text-grid-sm;
+}
+
+.create-order-modal__error {
+	@apply text-grid-sm text-red-600;
+}
+
+.create-order-modal__root-error {
+	@apply mt-2 text-grid-sm text-red-600;
+}
+
+.create-order-modal__status-note {
+	@apply mt-1 text-grid-sm text-black;
+}

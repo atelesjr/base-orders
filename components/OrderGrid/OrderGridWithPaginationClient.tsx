@@ -1,5 +1,7 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import CreateOrderModal from '@/components/CreateOrderModal';
 import OrderDetailsModal from '@/components/OrderDetailsModal';
 import type { Order } from '@/lib/orders/orders.types';
 import OrdersGrid from './index';
@@ -26,11 +28,15 @@ const OrderGridWithPaginationClient = ({
 	pagination,
 	sortState,
 }: OrderGridWithPaginationClientProps) => {
+	const router = useRouter();
 	const {
 		isFiltersOpen,
+		isCreateOrderOpen,
 		selectedOrder,
 		emptyStateMessage,
 		toggleFilters,
+		openCreateOrderModal,
+		handleCreateOrderOpenChange,
 		handleRowClick,
 		handleModalOpenChange,
 	} = useOrderGridWithPaginationController({ orders, filters });
@@ -39,8 +45,17 @@ const OrderGridWithPaginationClient = ({
 		<>
 			<OrdersGridToolbar
 				isFiltersOpen={isFiltersOpen}
+				onCreateOrderClick={openCreateOrderModal}
 				onFilterClick={toggleFilters}
 				pagination={pagination}
+			/>
+
+			<CreateOrderModal
+				onCreated={() => {
+					router.refresh();
+				}}
+				onOpenChange={handleCreateOrderOpenChange}
+				open={isCreateOrderOpen}
 			/>
 
 			{isFiltersOpen ? (

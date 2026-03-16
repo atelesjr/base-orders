@@ -6,6 +6,7 @@ import type { Order } from '@/lib/orders/orders.types';
 import OrdersGrid from './index';
 import type { OrdersGridPaginationData, OrdersGridSortState } from './types';
 import { OrdersGridPagination } from './parts/Pagination';
+import { OrdersGridToolbar } from './parts/Toolbar';
 
 type SelectionState = {
 	orderId: string;
@@ -26,23 +27,18 @@ const OrderGridWithPaginationClient = ({
 	const dataToken = useMemo(() => Symbol('orders-data-token'), [orders]);
 	const [selection, setSelection] = useState<SelectionState | null>(null);
 
-	const selectedOrder = useMemo(
-		() => {
-			if (!selection || selection.dataToken !== dataToken) {
-				return null;
-			}
+	const selectedOrder = useMemo(() => {
+		if (!selection || selection.dataToken !== dataToken) {
+			return null;
+		}
 
-			return orders.find((order) => order.id === selection.orderId) ?? null;
-		},
-		[orders, selection, dataToken],
-	);
+		return orders.find((order) => order.id === selection.orderId) ?? null;
+	}, [orders, selection, dataToken]);
 
 	return (
 		<>
-			<OrdersGridPagination
-				className="orders-grid__pagination--top"
-				pagination={pagination}
-			/>
+			<OrdersGridToolbar pagination={pagination} />
+
 			<OrdersGrid
 				orders={orders}
 				sortState={sortState}

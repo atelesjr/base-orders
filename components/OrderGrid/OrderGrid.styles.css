@@ -75,8 +75,24 @@
 	@apply mt-4 flex items-center justify-end gap-3;
 }
 
+.orders-grid__toolbar {
+	@apply mb-3 flex items-center justify-between gap-4;
+}
+
+.orders-grid__actions {
+	@apply flex items-center gap-4;
+}
+
+.orders-grid__action-button {
+	@apply inline-flex cursor-pointer items-center justify-center gap-1 border-0 bg-transparent p-0 text-grid-sm text-black transition-opacity hover:opacity-80;
+}
+
+.orders-grid__action-label {
+	@apply whitespace-nowrap;
+}
+
 .orders-grid__pagination--top {
-	@apply mt-0 mb-3;
+	@apply mt-0 mb-0;
 }
 
 .orders-grid__pagination--bottom {
@@ -103,5 +119,9 @@
 
 	.orders-grid__pagination {
 		@apply justify-center;
+	}
+
+	.orders-grid__toolbar {
+		@apply flex-wrap;
 	}
 }

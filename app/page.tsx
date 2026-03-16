@@ -11,7 +11,7 @@ export default async function Home({ searchParams }: HomeProps) {
 		<div className="page-container">
 			<Header />
 			<main className="main">
-				<h1>Gerenciamento de ordens</h1>
+				<h2>Gerenciamento de ordens</h2>
 				<OrderGridWithPagination searchParams={searchParams} />
 			</main>
 		</div>

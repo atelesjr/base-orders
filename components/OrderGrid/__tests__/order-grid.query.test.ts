@@ -72,4 +72,26 @@ describe('order-grid.query', () => {
 
 		expect(result.filters).toEqual({});
 	});
+
+	it('normalizes array-valued params to the first value', () => {
+		const result = resolveOrderGridQuery({
+			page: ['3', '2'],
+			sortBy: ['price', 'timestamp'],
+			sortDir: ['asc', 'desc'],
+			instrument: ['PETR', 'VALE'],
+			status: ['Executada', 'Aberta'],
+			side: ['Compra', 'Venda'],
+			date: ['2026-03-15', '2026-03-16'],
+		});
+
+		expect(result.requestedPage).toBe(3);
+		expect(result.sortBy).toBe('price');
+		expect(result.sortDir).toBe('asc');
+		expect(result.filters).toEqual({
+			instrument: 'PETR',
+			status: 'Executada',
+			side: 'Compra',
+			date: '2026-03-15',
+		});
+	});
 });

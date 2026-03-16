@@ -11,8 +11,12 @@ describe('OrderGrid', () => {
 		render(<OrdersGrid orders={orders} />);
 
 		expect(screen.getByRole('table')).toBeInTheDocument();
+		const headers = screen.getAllByRole('columnheader');
+		expect(headers[0]).toHaveTextContent('ID');
+		expect(headers[1]).toHaveTextContent('Instrumento');
 		expect(screen.getByText('Instrumento')).toBeInTheDocument();
 		expect(screen.getByText('Data/Hora')).toBeInTheDocument();
+		expect(screen.getByText('1')).toBeInTheDocument();
 		expect(screen.getByText('VALE3')).toBeInTheDocument();
 	});
 

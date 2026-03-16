@@ -1,9 +1,21 @@
 import type { OrdersGridFilters } from './orders.filter.types';
 import type { Order, OrderSide, OrderStatus } from './orders.types';
 
-const ORDER_STATUSES: OrderStatus[] = ['Aberta', 'Parcial', 'Executada', 'Cancelada'];
+const ORDER_STATUSES: OrderStatus[] = [
+	'Aberta',
+	'Parcial',
+	'Executada',
+	'Cancelada',
+];
 const ORDER_SIDES: OrderSide[] = ['Compra', 'Venda'];
 const DATE_FILTER_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+
+const formatDateKey = (date: Date): string => {
+	const year = date.getFullYear();
+	const month = String(date.getMonth() + 1).padStart(2, '0');
+	const day = String(date.getDate()).padStart(2, '0');
+	return `${year}-${month}-${day}`;
+};
 
 const normalizeTextFilter = (value?: string): string | undefined => {
 	if (!value) {
@@ -20,8 +32,19 @@ const normalizeDateFilter = (value?: string): string | undefined => {
 		return undefined;
 	}
 
-	const timestamp = Date.parse(`${normalized}T00:00:00.000Z`);
-	return Number.isNaN(timestamp) ? undefined : normalized;
+	const [year, month, day] = normalized.split('-').map(Number);
+	const parsedDate = new Date(year, month - 1, day);
+
+	if (
+		Number.isNaN(parsedDate.getTime()) ||
+		parsedDate.getFullYear() !== year ||
+		parsedDate.getMonth() !== month - 1 ||
+		parsedDate.getDate() !== day
+	) {
+		return undefined;
+	}
+
+	return normalized;
 };
 
 const normalizeStatusFilter = (value?: string): OrderStatus | undefined => {
@@ -48,7 +71,7 @@ const getTimestampDateKey = (timestamp: string): string | null => {
 		return null;
 	}
 
-	return parsedDate.toISOString().slice(0, 10);
+	return formatDateKey(parsedDate);
 };
 
 export const resolveOrdersGridFilters = (

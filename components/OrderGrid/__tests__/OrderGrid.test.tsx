@@ -45,11 +45,12 @@ describe('OrderGrid', () => {
 		expect(cols[1]).toHaveStyle({ width: 'auto' });
 	});
 
-	it('renders no body rows when orders list is empty', () => {
+	it('renders empty-state row when orders list is empty', () => {
 		const { container } = render(<OrdersGrid orders={[]} />);
 
 		expect(screen.getByRole('table')).toBeInTheDocument();
-		expect(container.querySelectorAll('tbody tr')).toHaveLength(0);
+		expect(container.querySelectorAll('tbody tr')).toHaveLength(1);
+		expect(screen.getByText('Nenhuma ordem encontrada.')).toBeInTheDocument();
 	});
 
 	it('calls onRowClick when a row is clicked', () => {

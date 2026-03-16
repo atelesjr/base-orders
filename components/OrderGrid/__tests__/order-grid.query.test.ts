@@ -15,6 +15,7 @@ describe('order-grid.query', () => {
 			requestedPage: 1,
 			sortBy: 'timestamp',
 			sortDir: 'desc',
+			filters: {},
 		});
 	});
 
@@ -42,5 +43,33 @@ describe('order-grid.query', () => {
 
 		expect(result.sortBy).toBe('price');
 		expect(result.sortDir).toBe('asc');
+	});
+
+	it('resolves valid filters and ignores invalid ones', () => {
+		const result = resolveOrderGridQuery({
+			id: ' 10 ',
+			instrument: ' petr4 ',
+			status: 'Executada',
+			side: 'Compra',
+			date: '2026-03-15',
+		});
+
+		expect(result.filters).toEqual({
+			id: '10',
+			instrument: 'petr4',
+			status: 'Executada',
+			side: 'Compra',
+			date: '2026-03-15',
+		});
+	});
+
+	it('drops unsupported filter values', () => {
+		const result = resolveOrderGridQuery({
+			status: 'Unknown',
+			side: 'Both',
+			date: '15/03/2026',
+		});
+
+		expect(result.filters).toEqual({});
 	});
 });

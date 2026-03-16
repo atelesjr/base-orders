@@ -6,12 +6,14 @@ type OrdersGridToolbarProps = {
 	pagination: OrdersGridPaginationData;
 	onCreateOrderClick?: () => void;
 	onFilterClick?: () => void;
+	isFiltersOpen?: boolean;
 };
 
 export const OrdersGridToolbar = ({
 	pagination,
 	onCreateOrderClick,
 	onFilterClick,
+	isFiltersOpen = false,
 }: OrdersGridToolbarProps) => {
 	return (
 		<div className="orders-grid__toolbar">
@@ -25,6 +27,7 @@ export const OrdersGridToolbar = ({
 				<OrdersGridActionButton
 					iconAlt="Filtrar ordens"
 					iconSrc="/assets/filter_list_60dp.svg"
+					isActive={isFiltersOpen}
 					label="Filtro"
 					onClick={onFilterClick}
 				/>

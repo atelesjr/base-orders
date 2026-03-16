@@ -3,6 +3,8 @@ import {
 	DEFAULT_ORDERS_SORT_DIR,
 	DEFAULT_PAGE_SIZE,
 } from './orders.constants';
+import { filterOrders } from './orders.filter';
+import type { OrdersGridFilters } from './orders.filter.types';
 import { findAllOrders } from './orders.repository';
 import { getSortedOrders } from './orders.sort';
 import type { OrdersSortBy, OrdersSortDir } from './orders.sort.types';
@@ -31,8 +33,10 @@ export const getPaginatedOrdersForGrid = async (
 	pageSize = DEFAULT_PAGE_SIZE,
 	sortBy: OrdersSortBy = DEFAULT_ORDERS_SORT_BY,
 	sortDir: OrdersSortDir = DEFAULT_ORDERS_SORT_DIR,
+	filters: OrdersGridFilters = {},
 ): Promise<PaginatedOrdersResult> => {
-	const orders = getSortedOrders(await findAllOrders(), sortBy, sortDir);
+	const filteredOrders = filterOrders(await findAllOrders(), filters);
+	const orders = getSortedOrders(filteredOrders, sortBy, sortDir);
 	const normalizedPageSize =
 		Number.isFinite(pageSize) && pageSize > 0
 			? Math.floor(pageSize)

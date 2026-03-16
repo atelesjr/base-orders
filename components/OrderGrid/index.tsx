@@ -20,6 +20,7 @@ const OrdersGrid = (({
 	columns = defaultColumns,
 	onRowClick,
 	sortState,
+	emptyStateMessage,
 }: OrdersGridProps) => {
 	return (
 		<OrdersGridRoot>
@@ -30,7 +31,12 @@ const OrdersGrid = (({
 					))}
 				</colgroup>
 				<OrdersGridHead columns={columns} sortState={sortState} />
-				<OrdersGridBody columns={columns} onRowClick={onRowClick} orders={orders} />
+				<OrdersGridBody
+					columns={columns}
+					emptyStateMessage={emptyStateMessage}
+					onRowClick={onRowClick}
+					orders={orders}
+				/>
 			</OrdersGridTable>
 		</OrdersGridRoot>
 	);

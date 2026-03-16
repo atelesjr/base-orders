@@ -5,6 +5,7 @@ type OrdersGridActionButtonProps = {
 	iconAlt: string;
 	iconSrc: string;
 	onClick?: () => void;
+	isActive?: boolean;
 };
 
 export const OrdersGridActionButton = ({
@@ -12,11 +13,15 @@ export const OrdersGridActionButton = ({
 	iconAlt,
 	iconSrc,
 	onClick,
+	isActive = false,
 }: OrdersGridActionButtonProps) => {
 	return (
 		<button
 			aria-label={label}
-			className="orders-grid__action-button"
+			aria-pressed={isActive}
+			className={`orders-grid__action-button ${
+				isActive ? 'orders-grid__action-button--active' : ''
+			}`.trim()}
 			onClick={onClick}
 			type="button"
 		>

@@ -6,8 +6,4 @@
 	.main {
 		@apply py-10 px-25;
 	}
-
-	.home__title {
-		@apply mb-8;
-	}
 }

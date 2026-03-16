@@ -105,6 +105,22 @@ describe('orders.service', () => {
 		expect(withInvalidPageSize.items).toHaveLength(15);
 	});
 
+	it('filters before sorting and pagination', async () => {
+		mockedFindAllOrders.mockResolvedValue([
+			makeOrder({ id: '1001', instrument: 'PETR4', status: 'Executada' }),
+			makeOrder({ id: '1002', instrument: 'VALE3', status: 'Aberta' }),
+			makeOrder({ id: '1003', instrument: 'PETR4', status: 'Aberta' }),
+		]);
+
+		const result = await getPaginatedOrdersForGrid(1, 15, 'price', 'asc', {
+			instrument: 'petr4',
+			status: 'Aberta',
+		});
+
+		expect(result.items.map((order) => order.id)).toEqual(['1003']);
+		expect(result.totalPages).toBe(1);
+	});
+
 	it('keeps sorting stable when an order has invalid timestamp', async () => {
 		mockedFindAllOrders.mockResolvedValue([
 			makeOrder({ id: '1', timestamp: 'invalid-date' }),

@@ -5,6 +5,7 @@ describe('OrdersGridToolbar', () => {
 	it('renders actions and top pagination', () => {
 		render(
 			<OrdersGridToolbar
+				isFiltersOpen
 				pagination={{
 					currentPage: 2,
 					totalPages: 4,
@@ -15,7 +16,10 @@ describe('OrdersGridToolbar', () => {
 		);
 
 		expect(screen.getByRole('button', { name: 'Criar ordem' })).toBeInTheDocument();
-		expect(screen.getByRole('button', { name: 'Filtro' })).toBeInTheDocument();
+		expect(screen.getByRole('button', { name: 'Filtro' })).toHaveAttribute(
+			'aria-pressed',
+			'true',
+		);
 		expect(screen.getByRole('navigation', { name: 'Paginação da tabela' })).toBeInTheDocument();
 		expect(screen.getByText('2 de 4')).toBeInTheDocument();
 	});

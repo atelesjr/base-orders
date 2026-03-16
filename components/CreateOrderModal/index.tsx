@@ -2,7 +2,11 @@
 
 import { useForm } from 'react-hook-form';
 import Modal from '@/components/Modal';
-import { createOrderSchema, type CreateOrderInput } from '@/lib/orders/create-order.schema';
+import {
+	createOrderSchema,
+	type CreateOrderInput,
+} from '@/lib/orders/create-order.schema';
+import Button from '@/components/ui/buttons';
 import './CreateOrderModal.styles.css';
 
 type CreateOrderModalProps = {
@@ -89,8 +93,15 @@ const CreateOrderModal = ({
 				</Modal.Header>
 
 				<Modal.Body>
-					<form className="create-order-modal__form" id="create-order-form" onSubmit={onSubmit}>
-						<label className="create-order-modal__field" htmlFor="create-order-instrument">
+					<form
+						className="create-order-modal__form"
+						id="create-order-form"
+						onSubmit={onSubmit}
+					>
+						<label
+							className="create-order-modal__field"
+							htmlFor="create-order-instrument"
+						>
 							<span>Instrumento</span>
 							<input
 								id="create-order-instrument"
@@ -102,22 +113,32 @@ const CreateOrderModal = ({
 								}}
 							/>
 							{errors.instrument ? (
-								<span className="create-order-modal__error">{errors.instrument.message}</span>
+								<span className="create-order-modal__error">
+									{errors.instrument.message}
+								</span>
 							) : null}
 						</label>
 
-						<label className="create-order-modal__field" htmlFor="create-order-side">
+						<label
+							className="create-order-modal__field"
+							htmlFor="create-order-side"
+						>
 							<span>Lado</span>
 							<select id="create-order-side" {...register('side')}>
 								<option value="Compra">Compra</option>
 								<option value="Venda">Venda</option>
 							</select>
 							{errors.side ? (
-								<span className="create-order-modal__error">{errors.side.message}</span>
+								<span className="create-order-modal__error">
+									{errors.side.message}
+								</span>
 							) : null}
 						</label>
 
-						<label className="create-order-modal__field" htmlFor="create-order-price">
+						<label
+							className="create-order-modal__field"
+							htmlFor="create-order-price"
+						>
 							<span>Preco</span>
 							<input
 								id="create-order-price"
@@ -126,11 +147,16 @@ const CreateOrderModal = ({
 								{...register('price', { valueAsNumber: true })}
 							/>
 							{errors.price ? (
-								<span className="create-order-modal__error">{errors.price.message}</span>
+								<span className="create-order-modal__error">
+									{errors.price.message}
+								</span>
 							) : null}
 						</label>
 
-						<label className="create-order-modal__field" htmlFor="create-order-quantity">
+						<label
+							className="create-order-modal__field"
+							htmlFor="create-order-quantity"
+						>
 							<span>Quantidade</span>
 							<input
 								id="create-order-quantity"
@@ -139,7 +165,9 @@ const CreateOrderModal = ({
 								{...register('quantity', { valueAsNumber: true })}
 							/>
 							{errors.quantity ? (
-								<span className="create-order-modal__error">{errors.quantity.message}</span>
+								<span className="create-order-modal__error">
+									{errors.quantity.message}
+								</span>
 							) : null}
 						</label>
 
@@ -148,7 +176,9 @@ const CreateOrderModal = ({
 						</p>
 
 						{errors.root ? (
-							<p className="create-order-modal__root-error">{errors.root.message}</p>
+							<p className="create-order-modal__root-error">
+								{errors.root.message}
+							</p>
 						) : null}
 					</form>
 				</Modal.Body>
@@ -161,14 +191,14 @@ const CreateOrderModal = ({
 					>
 						cancelar
 					</button>
-					<button
-						className="orders-grid__filter-submit"
+					<Button
 						disabled={isSubmitting}
 						form="create-order-form"
 						type="submit"
+						variant="primary"
 					>
 						criar
-					</button>
+					</Button>
 				</Modal.Footer>
 			</Modal.Content>
 		</Modal.Root>

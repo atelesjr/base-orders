@@ -1,0 +1,18 @@
+@reference '../../../styles/globals.css';
+
+.ui-button {
+	@apply inline-flex h-[3.25rem] min-w-[11rem] items-center justify-center rounded-full border px-8 text-(length:--font-size-base) leading-none tracking-widest transition-all duration-200 cursor-pointer;
+}
+
+.ui-button--primary {
+	@apply border-green bg-green text-white;
+}
+
+.ui-button--primary:hover {
+	@apply border-black bg-white text-black;
+	transform: translateY(-1px);
+}
+
+.ui-button--primary:active {
+	transform: translateY(0);
+}

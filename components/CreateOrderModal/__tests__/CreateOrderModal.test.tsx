@@ -29,9 +29,15 @@ describe('CreateOrderModal', () => {
 
 		fireEvent.click(screen.getByRole('button', { name: 'criar' }));
 
-		expect(await screen.findByText('Instrumento e obrigatorio')).toBeInTheDocument();
-		expect(await screen.findByText('Preco deve ser maior que zero')).toBeInTheDocument();
-		expect(await screen.findByText('Quantidade deve ser maior que zero')).toBeInTheDocument();
+		expect(
+			await screen.findByText('Instrumento e obrigatorio'),
+		).toBeInTheDocument();
+		expect(
+			await screen.findByText('Preco deve ser maior que zero'),
+		).toBeInTheDocument();
+		expect(
+			await screen.findByText('Quantidade deve ser maior que zero'),
+		).toBeInTheDocument();
 	});
 
 	it('submits valid data and calls onCreated', async () => {

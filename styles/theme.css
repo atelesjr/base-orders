@@ -21,6 +21,8 @@
 	--color-text: var(--color-black);
 
 	/* Responsive font sizes using clamp(min, ideal, max) */
+	/* Base: 11px (mobile) → fluid scale → 18px (desktop) */
+	--text-size-18: clamp(1.1rem, 1rem + 0.5vw, 1.8rem);
 	/* Base: 11px (mobile) → fluid scale → 16px (desktop) */
 	--font-size-base: clamp(1.1rem, 1rem + 0.5vw, 1.6rem);
 	/* Small: 10px (mobile) → fluid scale → 14px (desktop) */

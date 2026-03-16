@@ -104,4 +104,16 @@ describe('orders.service', () => {
 		expect(withInvalidPageSize.totalPages).toBe(2);
 		expect(withInvalidPageSize.items).toHaveLength(15);
 	});
+
+	it('keeps sorting stable when an order has invalid timestamp', async () => {
+		mockedFindAllOrders.mockResolvedValue([
+			makeOrder({ id: '1', timestamp: 'invalid-date' }),
+			makeOrder({ id: '2', timestamp: '2026-03-15T12:00:00Z' }),
+			makeOrder({ id: '3', timestamp: '2026-03-15T11:00:00Z' }),
+		]);
+
+		const result = await getOrdersForGrid();
+
+		expect(result.map((order) => order.id)).toEqual(['2', '3', '1']);
+	});
 });

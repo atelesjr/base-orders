@@ -23,6 +23,11 @@ const SIDE_RANK = {
 
 const ORDERS_SORT_FIELDS_SET = new Set<string>(ORDERS_SORT_FIELDS);
 
+const toTimestampMs = (value: string): number => {
+	const ms = new Date(value).getTime();
+	return Number.isFinite(ms) ? ms : 0;
+};
+
 export const isOrdersSortBy = (value: string): value is OrdersSortBy =>
 	ORDERS_SORT_FIELDS_SET.has(value);
 
@@ -48,7 +53,7 @@ const compareBySortField = (
 ): number => {
 	switch (sortBy) {
 		case 'timestamp':
-			return new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime();
+			return toTimestampMs(a.timestamp) - toTimestampMs(b.timestamp);
 		case 'instrument':
 			return a.instrument.localeCompare(b.instrument, 'pt-BR', {
 				sensitivity: 'base',
@@ -69,8 +74,7 @@ const compareBySortField = (
 };
 
 const compareByDefaultTieBreak = (a: Order, b: Order): number => {
-	const timestampCompare =
-		new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
+	const timestampCompare = toTimestampMs(b.timestamp) - toTimestampMs(a.timestamp);
 
 	if (timestampCompare !== 0) {
 		return timestampCompare;

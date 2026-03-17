@@ -184,21 +184,21 @@ const CreateOrderModal = ({
 				</Modal.Body>
 
 				<Modal.Footer>
-					<button
-						className="orders-grid__filter-clear"
-						onClick={closeModal}
-						type="button"
-					>
-						cancelar
-					</button>
-					<Button
-						disabled={isSubmitting}
-						form="create-order-form"
-						type="submit"
-						variant="primary"
-					>
-						criar
-					</Button>
+					<div className="create-order-modal__submit-button">
+						<Button
+							disabled={isSubmitting}
+							form="create-order-form"
+							type="submit"
+							variant="primary"
+						>
+							Criar
+						</Button>
+					</div>
+					<div className="create-order-modal__cancel-button">
+						<Button variant="secondary" onClick={closeModal}>
+							Cancelar
+						</Button>
+					</div>
 				</Modal.Footer>
 			</Modal.Content>
 		</Modal.Root>

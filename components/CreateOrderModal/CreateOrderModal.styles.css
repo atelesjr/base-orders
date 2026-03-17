@@ -24,3 +24,11 @@
 .create-order-modal__status-note {
 	@apply mt-1 text-grid-sm text-black;
 }
+
+.create-order-modal__submit-button {
+	@apply w-[11.6rem] mt-4 self-start;
+}
+
+.create-order-modal__cancel-button {
+	@apply w-[11.6rem] mt-4 self-start;
+}

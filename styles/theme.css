@@ -4,12 +4,17 @@
 		BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
 		'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 		'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-secondary:
+		'Wix Madefor Text Regular', ui-serif, Georgia, Cambria, 'Times New Roman',
+		Times, serif;
 
 	--color-black: #000000;
 	--color-blue: #64b5f6;
+	--color-gray-darker: #808080;
 	--color-gray-dark: #a9a9a9;
 	--color-gray: #e3e3e3;
 	--color-gray-light: #f5f5f5;
+	--color-green-light: #c8e6c9;
 	--color-green: #98d4a5;
 	--color-green-dark: #7db989;
 	--color-red: #e57373;

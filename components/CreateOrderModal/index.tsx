@@ -6,7 +6,7 @@ import {
 	createOrderSchema,
 	type CreateOrderInput,
 } from '@/lib/orders/create-order.schema';
-import Button from '@/components/ui/buttons';
+import Button from '@/components/ui/buttons/Button';
 import './CreateOrderModal.styles.css';
 
 type CreateOrderModalProps = {

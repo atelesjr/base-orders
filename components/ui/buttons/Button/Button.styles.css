@@ -1,4 +1,4 @@
-@reference '../../../styles/globals.css';
+@reference '../../../../styles/globals.css';
 
 .ui-button {
 	@apply inline-flex h-[3.25rem] w-full items-center justify-center rounded-full border px-8 text-(length:--font-size-base) leading-none tracking-widest transition-all duration-200 cursor-pointer;

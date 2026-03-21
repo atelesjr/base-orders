@@ -8,6 +8,7 @@ const meta: Meta<typeof Button> = {
 		children: 'Criar ordem',
 		variant: 'primary',
 		size: 'md',
+		width: 'auto',
 	},
 };
 
@@ -27,5 +28,12 @@ export const Large: Story = {
 	args: {
 		children: 'Enviar ordem',
 		size: 'lg',
+	},
+};
+
+export const FullWidth: Story = {
+	args: {
+		children: 'Confirmar',
+		width: 'full',
 	},
 };

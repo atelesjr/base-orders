@@ -9,6 +9,7 @@ describe('Button', () => {
 		expect(button).toBeInTheDocument();
 		expect(button).toHaveClass('ui-button--primary');
 		expect(button).toHaveClass('ui-button--md');
+		expect(button).toHaveClass('ui-button--width-auto');
 	});
 
 	it('triggers onClick when clicked', () => {
@@ -29,5 +30,12 @@ describe('Button', () => {
 		const button = screen.getByRole('button', { name: 'Cancelar' });
 		expect(button).toHaveClass('ui-button--secondary');
 		expect(button).toHaveClass('ui-button--lg');
+	});
+
+	it('supports full width mode', () => {
+		render(<Button width="full">Aplicar</Button>);
+
+		const button = screen.getByRole('button', { name: 'Aplicar' });
+		expect(button).toHaveClass('ui-button--width-full');
 	});
 });

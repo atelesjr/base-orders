@@ -16,6 +16,14 @@
 	@apply h-14 px-10 text-(length:--text-size-18);
 }
 
+.ui-button--width-auto {
+	@apply w-auto;
+}
+
+.ui-button--width-full {
+	@apply w-full;
+}
+
 .ui-button--primary {
 	@apply border-green bg-green text-white font-semibold;
 }

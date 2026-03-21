@@ -4,6 +4,18 @@
 	@apply inline-flex items-center justify-center rounded-full transition-transform cursor-pointer hover:scale-105;
 }
 
+.ui-button-icon--sm {
+	@apply min-h-10 px-3;
+}
+
+.ui-button-icon--md {
+	@apply min-h-11 px-4;
+}
+
+.ui-button-icon--lg {
+	@apply min-h-14 px-5;
+}
+
 .ui-button-icon--with-label {
 	@apply gap-2;
 }

@@ -4,15 +4,29 @@ import './ButtonIcon.styles.css';
 
 type ButtonIconVariant = 'primary' | 'secondary';
 type IconPosition = 'left' | 'right';
+type ButtonIconSize = 'sm' | 'md' | 'lg';
 
-export type ButtonIconProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonIconBaseProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	iconSrc: string;
 	iconAlt?: string;
-	label?: string;
 	variant?: ButtonIconVariant;
 	iconPosition?: IconPosition;
 	iconSize?: number;
+	size?: ButtonIconSize;
 };
+
+type ButtonIconWithLabelProps = {
+	label: string;
+	'aria-label'?: string;
+};
+
+type ButtonIconIconOnlyProps = {
+	label?: undefined;
+	'aria-label': string;
+};
+
+export type ButtonIconProps = ButtonIconBaseProps &
+	(ButtonIconWithLabelProps | ButtonIconIconOnlyProps);
 
 const ButtonIcon = ({
 	iconSrc,
@@ -21,13 +35,16 @@ const ButtonIcon = ({
 	variant = 'primary',
 	iconPosition = 'left',
 	iconSize = 28,
+	size = 'md',
 	className,
 	type = 'button',
+	'aria-label': ariaLabel,
 	...buttonProps
 }: ButtonIconProps) => {
 	const classes = [
 		'ui-button-icon',
 		`ui-button-icon--${variant}`,
+		`ui-button-icon--${size}`,
 		label ? 'ui-button-icon--with-label' : 'ui-button-icon--icon-only',
 		className,
 	]
@@ -36,8 +53,8 @@ const ButtonIcon = ({
 
 	const icon = (
 		<Image
-			alt={iconAlt}
-			aria-hidden={iconAlt ? undefined : true}
+			alt={label ? '' : iconAlt}
+			aria-hidden={label ? true : iconAlt ? undefined : true}
 			height={iconSize}
 			src={iconSrc}
 			width={iconSize}
@@ -45,7 +62,7 @@ const ButtonIcon = ({
 	);
 
 	return (
-		<button className={classes} type={type} {...buttonProps}>
+		<button aria-label={ariaLabel} className={classes} type={type} {...buttonProps}>
 			{iconPosition === 'left' ? icon : null}
 			{label ? <span className="ui-button-icon__label">{label}</span> : null}
 			{iconPosition === 'right' ? icon : null}

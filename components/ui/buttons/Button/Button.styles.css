@@ -1,7 +1,19 @@
 @reference '../../../../styles/globals.css';
 
 .ui-button {
-	@apply inline-flex h-[3.25rem] w-full items-center justify-center rounded-full border px-8 text-(length:--font-size-base) leading-none tracking-widest transition-all duration-200 cursor-pointer;
+	@apply inline-flex items-center justify-center rounded-full border leading-none tracking-widest transition-all duration-200 cursor-pointer;
+}
+
+.ui-button--sm {
+	@apply h-10 px-5 text-grid-sm;
+}
+
+.ui-button--md {
+	@apply h-[3.25rem] px-8 text-(length:--font-size-base);
+}
+
+.ui-button--lg {
+	@apply h-14 px-10 text-(length:--text-size-18);
 }
 
 .ui-button--primary {

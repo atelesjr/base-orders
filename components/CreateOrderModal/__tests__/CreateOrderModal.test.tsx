@@ -10,7 +10,7 @@ describe('CreateOrderModal', () => {
 		expect(screen.getByRole('dialog')).toBeInTheDocument();
 		expect(screen.getByText('Criar ordem')).toBeInTheDocument();
 
-		fireEvent.click(screen.getByRole('button', { name: 'cancelar' }));
+		fireEvent.click(screen.getByRole('button', { name: /cancelar/i }));
 		expect(onOpenChange).toHaveBeenCalledWith(false);
 	});
 
@@ -27,7 +27,7 @@ describe('CreateOrderModal', () => {
 			target: { value: 0 },
 		});
 
-		fireEvent.click(screen.getByRole('button', { name: 'criar' }));
+		fireEvent.click(screen.getByRole('button', { name: /criar/i }));
 
 		expect(
 			await screen.findByText('Instrumento e obrigatorio'),
@@ -69,7 +69,7 @@ describe('CreateOrderModal', () => {
 			target: { value: '100' },
 		});
 
-		fireEvent.click(screen.getByRole('button', { name: 'criar' }));
+		fireEvent.click(screen.getByRole('button', { name: /criar/i }));
 
 		await waitFor(() => {
 			expect(global.fetch).toHaveBeenCalledWith(

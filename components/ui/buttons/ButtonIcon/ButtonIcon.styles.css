@@ -5,15 +5,15 @@
 }
 
 .ui-button-icon--sm {
-	@apply min-h-10 px-3;
+	@apply min-h-10;
 }
 
 .ui-button-icon--md {
-	@apply min-h-11 px-4;
+	@apply min-h-11;
 }
 
 .ui-button-icon--lg {
-	@apply min-h-14 px-5;
+	@apply min-h-14;
 }
 
 .ui-button-icon--with-label {

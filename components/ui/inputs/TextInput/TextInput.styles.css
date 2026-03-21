@@ -1,0 +1,27 @@
+@reference '../../../../styles/globals.css';
+
+.ui-text-input {
+	@apply flex flex-col gap-1;
+}
+
+.ui-text-input__label {
+	@apply text-grid-sm text-black font-semibold;
+}
+
+.ui-text-input__input {
+	@apply h-[3.5rem] w-full rounded border border-black bg-white px-3 text-(length:--font-size-base) font-medium leading-none transition-colors duration-200;
+	@apply hover:border-green;
+	@apply focus-visible:outline-2 focus-visible:outline-green;
+}
+
+.ui-text-input__input:disabled {
+	@apply cursor-not-allowed opacity-60;
+}
+
+.ui-text-input--invalid {
+	@apply border-red-alert;
+}
+
+.ui-text-input__error {
+	@apply text-grid-sm text-red-600 font-semibold;
+}

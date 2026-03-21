@@ -150,7 +150,33 @@ Recommended standard:
 
 ---
 
-## 7) SOLID applied to UI
+## 7) Compound Components (when to apply)
+
+Use Compound Components only when the component has multiple semantic parts that must share state/context.
+
+Apply Compound when at least 2 of these are true:
+
+- multiple related parts (for example: Root, Label, Input, Hint, Error)
+- shared behavior/state between parts (open, selected, invalid, disabled, ids)
+- need for flexible composition in layout
+- prop-based API would become too large/noisy
+
+Do not apply Compound when:
+
+- a single primitive with `variant`, `size`, `disabled`, `width` is enough
+- no shared state is required between parts
+
+If Compound is applied:
+
+- `Root` owns shared state/context
+- parts consume context (`Component.Root`, `Component.Part`)
+- a11y links are required (`id`, `aria-describedby`, `aria-invalid`)
+- Storybook must include composed usage
+- tests must cover composition + a11y behavior
+
+---
+
+## 8) SOLID applied to UI
 
 ### Single Responsibility (SRP)
 
@@ -163,7 +189,7 @@ Recommended standard:
 
 ---
 
-## 8) Tests (required)
+## 9) Tests (required)
 
 - Every new component must include tests.
 - Any behavior change in an existing component must update/add tests.
@@ -188,11 +214,11 @@ Commands:
 - Run tests with `pnpm test`
 - CI must fail when required tests are missing or failing
 
-## 9) State Management (Zustand)
+## 10) State Management (Zustand)
 
 Goal: avoid prop drilling while keeping state predictable, testable, and well-scoped.
 
-## 10) When to use Zustand (✅)
+## 11) When to use Zustand (✅)
 
 Use Zustand when state is shared by **multiple components** that are not in a simple parent/child chain, or when prop drilling becomes noisy.
 
@@ -228,7 +254,7 @@ Prefer composition before Zustand:
 
 ---
 
-## 11) Storybook (required)
+## 12) Storybook (required)
 
 - Every reusable UI component in `components/ui/*` must have a story.
 - Story file name: `<Component>.stories.tsx`

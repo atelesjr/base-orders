@@ -16,8 +16,24 @@
 	@apply gap-1;
 }
 
-.orders-grid__filter-field .ui-text-input__input {
-	@apply h-9 rounded border border-black bg-white px-2 text-grid-sm;
+.orders-grid__filter-field .ui-select-input {
+	@apply relative gap-1;
+}
+
+.orders-grid__filter-field .ui-text-input__input,
+.orders-grid__filter-select-input {
+	@apply h-[3.5rem] rounded border border-black bg-white px-3 text-(length:--font-size-base) font-medium leading-none transition-colors duration-200;
+	@apply hover:border-green;
+}
+
+.orders-grid__filter-select-input:focus,
+.orders-grid__filter-select-input:focus-visible {
+	@apply outline-2 outline-green;
+	outline-offset: 2px;
+}
+
+.orders-grid__filter-field .ui-select-input__menu {
+	@apply absolute left-0 top-full z-30 -mt-px w-full;
 }
 
 .orders-grid__filter-select {

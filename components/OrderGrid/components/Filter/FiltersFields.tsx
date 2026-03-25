@@ -1,6 +1,6 @@
 import TextInput from '@/components/ui/inputs/TextInput';
+import SelectInput from '@/components/ui/inputs/SelectInput';
 import { OrdersGridFilterDatePicker } from './FilterDatePicker';
-import { OrdersGridFilterSelect } from './FilterSelect';
 import {
 	DATE_FILTER_FIELD,
 	SELECT_FILTER_FIELDS,
@@ -35,19 +35,20 @@ export const OrdersGridFiltersFields = ({
 			))}
 
 			{SELECT_FILTER_FIELDS.map((field) => (
-				<label className="orders-grid__filter-field" htmlFor={field.id} key={field.key}>
-					<span>{field.label}</span>
-					<OrdersGridFilterSelect
-						ariaLabel={field.label}
+				<div className="orders-grid__filter-field" key={field.key}>
+					<SelectInput
+						aria-label={field.label}
+						className="orders-grid__filter-select-input"
 						id={field.id}
+						label={field.label}
 						name={field.key}
-						onChange={(nextValue) => {
+						onValueChange={(nextValue) => {
 							onFieldChange(field.key, nextValue);
 						}}
 						options={field.options}
 						value={formState[field.key]}
 					/>
-				</label>
+				</div>
 			))}
 
 			<label className="orders-grid__filter-field" htmlFor={DATE_FILTER_FIELD.id}>

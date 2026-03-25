@@ -11,7 +11,12 @@
 .ui-select-input__field {
 	@apply inline-flex h-[3.5rem] w-full items-center justify-between rounded border border-black bg-white px-3 text-(length:--font-size-base) font-medium leading-none transition-colors duration-200;
 	@apply hover:border-green;
-	@apply focus-visible:outline-2 focus-visible:outline-green;
+}
+
+.ui-select-input__field:focus,
+.ui-select-input__field:focus-visible {
+	@apply outline-2 outline-green;
+	outline-offset: 2px;
 }
 
 .ui-select-input__field--disabled {

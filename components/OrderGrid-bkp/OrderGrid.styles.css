@@ -1,0 +1,261 @@
+@reference '../../styles/globals.css';
+
+.orders-grid {
+	@apply w-full;
+}
+
+.orders-grid__title {
+	@apply mb-6;
+}
+
+.orders-grid__table-wrapper {
+	@apply w-full overflow-x-auto;
+}
+
+.orders-grid__table {
+	@apply w-full min-w-[680px] border-collapse border border-black table-fixed;
+}
+
+.orders-grid__head-row,
+.orders-grid__row {
+	@apply border-b border-black;
+}
+
+.orders-grid__th,
+.orders-grid__td {
+	@apply px-4 py-3 text-left whitespace-nowrap border-r border-black text-grid-sm;
+}
+
+.orders-grid__th:last-child,
+.orders-grid__td:last-child {
+	@apply border-r-0;
+}
+
+.orders-grid__th {
+	@apply font-semibold bg-black text-white;
+}
+
+.orders-grid__sort-link {
+	@apply inline-flex w-full items-center justify-between gap-2 text-white no-underline;
+}
+
+.orders-grid__sort-link--active {
+	@apply font-semibold;
+}
+
+.orders-grid__sort-indicator {
+	@apply text-grid-xm;
+}
+
+.orders-grid__td {
+	@apply text-grid-xm;
+}
+
+.orders-grid__empty-state {
+	@apply px-4 py-6 text-center text-grid-sm text-black;
+}
+
+.orders-grid__row:last-child {
+	@apply border-b-0;
+}
+
+.orders-grid__table tbody .orders-grid__row:nth-child(odd) {
+	@apply bg-gray;
+}
+
+.orders-grid__table tbody .orders-grid__row:nth-child(even) {
+	@apply bg-gray-light;
+}
+
+.orders-grid__table tbody .orders-grid__row {
+	@apply transition-colors;
+}
+
+.orders-grid__table tbody .orders-grid__row--clickable {
+	@apply cursor-pointer hover:bg-green active:bg-green-dark;
+}
+
+.orders-grid__pagination {
+	@apply mt-4 flex items-center justify-end gap-3;
+}
+
+.orders-grid__toolbar {
+	@apply mb-3 flex items-center justify-between gap-4;
+}
+
+.orders-grid__actions {
+	@apply flex items-center gap-4;
+}
+
+.orders-grid__action-button {
+	@apply inline-flex cursor-pointer items-center justify-center gap-1 border-0 bg-transparent p-0 text-grid-sm text-black transition-opacity hover:opacity-80;
+}
+
+.orders-grid__action-button--active {
+	@apply font-semibold;
+}
+
+.orders-grid__action-label {
+	@apply whitespace-nowrap;
+}
+
+.orders-grid__pagination--top {
+	@apply mt-0 mb-0;
+}
+
+.orders-grid__pagination--bottom {
+	@apply mt-4;
+}
+
+.orders-grid__filters {
+	@apply mb-4 rounded-lg border border-black bg-gray-light p-4;
+}
+
+.orders-grid__filters-grid {
+	@apply grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-5;
+}
+
+.orders-grid__filter-field {
+	@apply flex flex-col gap-1 text-grid-sm text-black;
+}
+
+.orders-grid__filter-field input,
+.orders-grid__filter-field select {
+	@apply h-9 rounded border border-black bg-white px-2 text-grid-sm;
+}
+
+.orders-grid__filter-select {
+	@apply relative;
+}
+
+.orders-grid__filter-select-trigger {
+	@apply h-9 w-full rounded border border-black bg-white px-2 text-left text-grid-sm text-black inline-flex items-center justify-between;
+}
+
+.orders-grid__filter-select-menu {
+	@apply absolute left-0 top-full z-20 mt-1 w-full overflow-hidden rounded border border-black bg-white;
+}
+
+.orders-grid__filter-select-option {
+	@apply w-full px-2 py-1 text-left text-grid-sm text-black;
+}
+
+.orders-grid__filter-select-option:hover {
+	@apply bg-green;
+}
+
+.orders-grid__filter-select-option:active {
+	@apply bg-green-dark text-white;
+}
+
+.orders-grid__filter-select-option--selected {
+	@apply font-semibold;
+}
+
+.orders-grid__date-picker {
+	@apply relative;
+}
+
+.orders-grid__date-picker-trigger {
+	@apply h-9 w-full rounded border border-black bg-white px-2 text-left text-grid-sm text-black inline-flex items-center justify-between leading-none;
+}
+
+.orders-grid__date-picker-popover {
+	@apply absolute right-0 top-full z-20 mt-1 w-[320px] max-w-[calc(100vw-2rem)] rounded border border-black bg-white p-3 shadow-md;
+}
+
+.orders-grid__date-picker-header {
+	@apply mb-2 flex items-center justify-between text-grid-sm;
+}
+
+.orders-grid__date-picker-nav {
+	@apply flex items-center gap-1;
+}
+
+.orders-grid__date-picker-nav button {
+	@apply h-7 w-7 rounded text-grid-sm hover:bg-green active:bg-green-dark;
+}
+
+.orders-grid__date-picker-weekdays {
+	@apply mb-1 grid grid-cols-7 text-center text-grid-sm font-semibold;
+}
+
+.orders-grid__date-picker-grid {
+	@apply grid grid-cols-7 gap-1;
+}
+
+.orders-grid__date-picker-day {
+	@apply h-8 rounded text-grid-sm hover:bg-green active:bg-green-dark;
+}
+
+.orders-grid__date-picker-day--outside {
+	@apply text-black/40;
+}
+
+.orders-grid__date-picker-day--today {
+	@apply border border-black;
+}
+
+.orders-grid__date-picker-day--selected {
+	@apply bg-green font-semibold;
+}
+
+.orders-grid__date-picker-actions {
+	@apply mt-2 flex items-center justify-between;
+}
+
+.orders-grid__date-picker-actions button {
+	@apply rounded px-2 py-1 text-grid-sm hover:bg-green active:bg-green-dark;
+}
+
+.orders-grid__filters-actions {
+	@apply mt-3 flex items-center justify-end gap-2;
+}
+
+.orders-grid__filter-submit,
+.orders-grid__filter-clear {
+	@apply inline-flex h-9 items-center justify-center rounded border border-black px-3 text-grid-sm transition-opacity hover:opacity-80;
+}
+
+.orders-grid__filter-submit {
+	@apply bg-black text-white;
+}
+
+.orders-grid__filter-clear {
+	@apply bg-white text-black;
+}
+
+.orders-grid__page-button {
+	@apply inline-flex items-center justify-center rounded-full transition-transform hover:scale-105;
+}
+
+.orders-grid__page-button--disabled {
+	@apply opacity-40 pointer-events-none;
+}
+
+.orders-grid__page-indicator {
+	@apply text-grid-sm text-black;
+}
+
+@media (max-width: 640px) {
+	.orders-grid__th,
+	.orders-grid__td {
+		@apply px-3 py-2;
+	}
+
+	.orders-grid__pagination {
+		@apply justify-center;
+	}
+
+	.orders-grid__toolbar {
+		@apply flex-wrap;
+	}
+
+	.orders-grid__filters-actions {
+		@apply justify-start;
+	}
+
+	.orders-grid__date-picker-popover {
+		@apply right-auto left-0 w-[min(320px,calc(100vw-2rem))];
+	}
+}

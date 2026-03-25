@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 export type TableColumn<TData> = {
 	key: string;
-	label: string;
+	label: ReactNode;
 	width?: string;
 	render: (row: TData) => ReactNode;
 };

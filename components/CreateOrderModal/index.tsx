@@ -17,9 +17,9 @@ type CreateOrderModalProps = {
 	onCreated?: () => void;
 };
 
-
-
-type CreateOrderFormDefaults = Omit<CreateOrderInput, 'side'> & { side: CreateOrderInput['side'] };
+type CreateOrderFormDefaults = Omit<CreateOrderInput, 'side'> & {
+	side: CreateOrderInput['side'];
+};
 
 const CreateOrderModal = ({
 	open,
@@ -43,12 +43,10 @@ const CreateOrderModal = ({
 		} as CreateOrderFormDefaults,
 	});
 
-
 	const instrumentValue = watch('instrument');
 	const sideValue = watch('side');
 	const priceValue = watch('price');
 	const quantityValue = watch('quantity');
-
 
 	const closeModal = () => {
 		reset({
@@ -124,25 +122,24 @@ const CreateOrderModal = ({
 							/>
 						</div>
 
-
-							<div className="create-order-modal__field">
-								<RadioInput
-									aria-label="Lado"
-									label="Lado"
-									name="create-order-side"
-									errorMessage={errors.side?.message}
-									options={[
-										{ label: 'Compra', value: 'Compra' },
-										{ label: 'Venda', value: 'Venda' },
-									]}
-									value={sideValue}
-									onValueChange={(nextValue) => {
-										setValue('side', nextValue as CreateOrderInput['side'], {
-											shouldDirty: true,
-										});
-									}}
-								/>
-							</div>
+						<div className="create-order-modal__field">
+							<RadioInput
+								aria-label="Lado"
+								label="Lado"
+								name="create-order-side"
+								errorMessage={errors.side?.message}
+								options={[
+									{ label: 'Compra', value: 'Compra' },
+									{ label: 'Venda', value: 'Venda' },
+								]}
+								value={sideValue}
+								onValueChange={(nextValue) => {
+									setValue('side', nextValue as CreateOrderInput['side'], {
+										shouldDirty: true,
+									});
+								}}
+							/>
+						</div>
 
 						<div className="create-order-modal__field">
 							<TextInput

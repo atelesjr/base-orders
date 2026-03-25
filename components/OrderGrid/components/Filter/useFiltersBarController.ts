@@ -2,7 +2,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { FILTER_FORM_KEYS, emptyFiltersFormState, toFiltersFormState, type FiltersFormState } from './filters.config';
-import type { OrdersGridFilterState, OrdersGridSortState } from '../types';
+import type { OrdersGridFilterState, OrdersGridSortState } from '../../types';
 
 type UseFiltersBarControllerArgs = {
 	filters: OrdersGridFilterState;

@@ -10,9 +10,9 @@ import type {
 	OrdersGridPaginationData,
 	OrdersGridSortState,
 } from './types';
-import { OrdersGridFiltersBar } from './parts/FiltersBar';
-import { OrdersGridPagination } from './parts/Pagination';
-import { OrdersGridToolbar } from './parts/Toolbar';
+import { OrdersGridFiltersBar } from './components/Filter/FiltersBar';
+import { OrdersGridPagination } from './components/Pagination';
+import { OrdersGridToolbar } from './components/Toolbar';
 import { useOrderGridWithPaginationController } from './useOrderGridWithPaginationController';
 
 type OrderGridWithPaginationClientProps = {

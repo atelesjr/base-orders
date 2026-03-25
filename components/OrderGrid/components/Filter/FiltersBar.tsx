@@ -1,9 +1,11 @@
 'use client';
 
+import './Filter.styles.css';
+
 import { OrdersGridFiltersActions } from './FiltersActions';
 import { OrdersGridFiltersFields } from './FiltersFields';
 import { useFiltersBarController } from './useFiltersBarController';
-import type { OrdersGridFilterState, OrdersGridSortState } from '../types';
+import type { OrdersGridFilterState, OrdersGridSortState } from '../../types';
 
 type OrdersGridFiltersBarProps = {
 	filters: OrdersGridFilterState;

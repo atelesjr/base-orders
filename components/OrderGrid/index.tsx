@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import Table, { type TableColumn } from '@/components/ui/Table';
 import { defaultColumns } from './columns';
-import { OrdersGridRoot } from './parts/Root';
+import { OrdersGridRoot } from './components/Root';
 import type { OrdersGridColumn, OrdersGridProps } from './types';
 
 type OrdersGridCompoundComponent = ((props: OrdersGridProps) => ReactNode) & {

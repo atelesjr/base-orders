@@ -1,4 +1,4 @@
-import type { OrdersGridFilterState } from '../types';
+import type { OrdersGridFilterState } from '../../types';
 import type { FilterSelectOption } from './FilterSelect';
 
 export type FiltersFormState = {

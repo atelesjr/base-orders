@@ -1,4 +1,4 @@
-import { UIButton } from '@/components/ui/Button';
+import Button from '@/components/ui/buttons/Button';
 
 type OrdersGridFiltersActionsProps = {
 	onClear: () => void;
@@ -9,16 +9,16 @@ export const OrdersGridFiltersActions = ({
 }: OrdersGridFiltersActionsProps) => {
 	return (
 		<div className="orders-grid__filters-actions">
-			<UIButton className="orders-grid__filter-submit" type="submit">
+			<Button className="orders-grid__filter-submit" type="submit">
 				Aplicar
-			</UIButton>
-			<UIButton
+			</Button>
+			<Button
 				className="orders-grid__filter-clear"
 				onClick={onClear}
 				type="button"
 			>
 				Limpar
-			</UIButton>
+			</Button>
 		</div>
 	);
 };

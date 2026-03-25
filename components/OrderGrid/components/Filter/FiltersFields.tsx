@@ -1,5 +1,4 @@
-import { UIFormField } from '@/components/ui/FormField';
-import { UITextInput } from '@/components/ui/TextInput';
+import TextInput from '@/components/ui/inputs/TextInput';
 import { OrdersGridFilterDatePicker } from './FilterDatePicker';
 import { OrdersGridFilterSelect } from './FilterSelect';
 import {
@@ -21,31 +20,23 @@ export const OrdersGridFiltersFields = ({
 	return (
 		<div className="orders-grid__filters-grid">
 			{TEXT_FILTER_FIELDS.map((field) => (
-				<UIFormField
-					className="orders-grid__filter-field"
-					id={field.id}
-					key={field.key}
-					label={field.label}
-				>
-					<UITextInput
+				<div className="orders-grid__filter-field" key={field.key}>
+					<TextInput
 						id={field.id}
-						onChange={(nextValue) => {
+						label={field.label}
+						onValueChange={(nextValue) => {
 							onFieldChange(field.key, nextValue);
 						}}
 						placeholder={field.placeholder}
 						type="text"
 						value={formState[field.key]}
 					/>
-				</UIFormField>
+				</div>
 			))}
 
 			{SELECT_FILTER_FIELDS.map((field) => (
-				<UIFormField
-					className="orders-grid__filter-field"
-					id={field.id}
-					key={field.key}
-					label={field.label}
-				>
+				<label className="orders-grid__filter-field" htmlFor={field.id} key={field.key}>
+					<span>{field.label}</span>
 					<OrdersGridFilterSelect
 						ariaLabel={field.label}
 						id={field.id}
@@ -56,14 +47,11 @@ export const OrdersGridFiltersFields = ({
 						options={field.options}
 						value={formState[field.key]}
 					/>
-				</UIFormField>
+				</label>
 			))}
 
-			<UIFormField
-				className="orders-grid__filter-field"
-				id={DATE_FILTER_FIELD.id}
-				label={DATE_FILTER_FIELD.label}
-			>
+			<label className="orders-grid__filter-field" htmlFor={DATE_FILTER_FIELD.id}>
+				<span>{DATE_FILTER_FIELD.label}</span>
 				<OrdersGridFilterDatePicker
 					ariaLabel={DATE_FILTER_FIELD.label}
 					id={DATE_FILTER_FIELD.id}
@@ -72,7 +60,7 @@ export const OrdersGridFiltersFields = ({
 					}}
 					value={formState.date}
 				/>
-			</UIFormField>
+			</label>
 		</div>
 	);
 };

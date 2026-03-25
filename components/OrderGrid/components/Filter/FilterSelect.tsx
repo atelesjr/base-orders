@@ -41,7 +41,7 @@ export const OrdersGridFilterSelect = ({
 	}, []);
 
 	const fallbackOption: FilterSelectOption = {
-		label: 'Sem opcoes',
+		label: 'Sem opções',
 		value: '',
 	};
 	const selectedOption =

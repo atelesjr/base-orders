@@ -21,7 +21,7 @@
 }
 
 .modal__title {
-	@apply text-grid-sm font-semibold text-black;
+	@apply text-size-16 font-semibold text-black;
 }
 
 .modal__body {

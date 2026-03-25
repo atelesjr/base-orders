@@ -20,7 +20,7 @@ describe('CreateOrderModal', () => {
 		fireEvent.change(screen.getByLabelText('Instrumento'), {
 			target: { value: '' },
 		});
-		fireEvent.change(screen.getByLabelText('Preco'), {
+		fireEvent.change(screen.getByLabelText('Preço'), {
 			target: { value: 0 },
 		});
 		fireEvent.change(screen.getByLabelText('Quantidade'), {
@@ -33,7 +33,7 @@ describe('CreateOrderModal', () => {
 			await screen.findByText('Instrumento e obrigatorio'),
 		).toBeInTheDocument();
 		expect(
-			await screen.findByText('Preco deve ser maior que zero'),
+			await screen.findByText('Preço deve ser maior que zero'),
 		).toBeInTheDocument();
 		expect(
 			await screen.findByText('Quantidade deve ser maior que zero'),

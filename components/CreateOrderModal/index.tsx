@@ -2,6 +2,8 @@
 
 import { useForm } from 'react-hook-form';
 import Modal from '@/components/Modal';
+import TextInput from '@/components/ui/inputs/TextInput';
+import RadioInput from '@/components/ui/inputs/RadioInput';
 import {
 	createOrderSchema,
 	type CreateOrderInput,
@@ -15,14 +17,19 @@ type CreateOrderModalProps = {
 	onCreated?: () => void;
 };
 
+
+
+type CreateOrderFormDefaults = Omit<CreateOrderInput, 'side'> & { side: CreateOrderInput['side'] };
+
 const CreateOrderModal = ({
 	open,
 	onOpenChange,
 	onCreated,
 }: CreateOrderModalProps) => {
 	const {
-		register,
+		watch,
 		handleSubmit,
+		setValue,
 		setError,
 		clearErrors,
 		reset,
@@ -33,10 +40,15 @@ const CreateOrderModal = ({
 			side: 'Compra',
 			price: 0,
 			quantity: 0,
-		},
+		} as CreateOrderFormDefaults,
 	});
 
-	const instrumentField = register('instrument');
+
+	const instrumentValue = watch('instrument');
+	const sideValue = watch('side');
+	const priceValue = watch('price');
+	const quantityValue = watch('quantity');
+
 
 	const closeModal = () => {
 		reset({
@@ -44,7 +56,7 @@ const CreateOrderModal = ({
 			side: 'Compra',
 			price: 0,
 			quantity: 0,
-		});
+		} as CreateOrderFormDefaults);
 		onOpenChange(false);
 	};
 
@@ -98,81 +110,72 @@ const CreateOrderModal = ({
 						id="create-order-form"
 						onSubmit={onSubmit}
 					>
-						<label
-							className="create-order-modal__field"
-							htmlFor="create-order-instrument"
-						>
-							<span>Instrumento</span>
-							<input
+						<div className="create-order-modal__field">
+							<TextInput
 								id="create-order-instrument"
-								type="text"
-								{...instrumentField}
-								onChange={(event) => {
-									event.target.value = event.target.value.toUpperCase();
-									instrumentField.onChange(event);
+								label="Instrumento"
+								errorMessage={errors.instrument?.message}
+								value={instrumentValue}
+								onValueChange={(nextValue) => {
+									setValue('instrument', nextValue.toUpperCase(), {
+										shouldDirty: true,
+									});
 								}}
 							/>
-							{errors.instrument ? (
-								<span className="create-order-modal__error">
-									{errors.instrument.message}
-								</span>
-							) : null}
-						</label>
+						</div>
 
-						<label
-							className="create-order-modal__field"
-							htmlFor="create-order-side"
-						>
-							<span>Lado</span>
-							<select id="create-order-side" {...register('side')}>
-								<option value="Compra">Compra</option>
-								<option value="Venda">Venda</option>
-							</select>
-							{errors.side ? (
-								<span className="create-order-modal__error">
-									{errors.side.message}
-								</span>
-							) : null}
-						</label>
 
-						<label
-							className="create-order-modal__field"
-							htmlFor="create-order-price"
-						>
-							<span>Preco</span>
-							<input
+							<div className="create-order-modal__field">
+								<RadioInput
+									aria-label="Lado"
+									label="Lado"
+									name="create-order-side"
+									errorMessage={errors.side?.message}
+									options={[
+										{ label: 'Compra', value: 'Compra' },
+										{ label: 'Venda', value: 'Venda' },
+									]}
+									value={sideValue}
+									onValueChange={(nextValue) => {
+										setValue('side', nextValue as CreateOrderInput['side'], {
+											shouldDirty: true,
+										});
+									}}
+								/>
+							</div>
+
+						<div className="create-order-modal__field">
+							<TextInput
 								id="create-order-price"
-								type="number"
+								label="Preço"
+								errorMessage={errors.price?.message}
 								step="any"
-								{...register('price', { valueAsNumber: true })}
+								type="number"
+								value={priceValue}
+								onValueChange={(nextValue) => {
+									setValue('price', Number(nextValue), { shouldDirty: true });
+								}}
 							/>
-							{errors.price ? (
-								<span className="create-order-modal__error">
-									{errors.price.message}
-								</span>
-							) : null}
-						</label>
+						</div>
 
-						<label
-							className="create-order-modal__field"
-							htmlFor="create-order-quantity"
-						>
-							<span>Quantidade</span>
-							<input
+						<div className="create-order-modal__field">
+							<TextInput
 								id="create-order-quantity"
-								type="number"
+								label="Quantidade"
+								errorMessage={errors.quantity?.message}
 								step="any"
-								{...register('quantity', { valueAsNumber: true })}
+								type="number"
+								value={quantityValue}
+								onValueChange={(nextValue) => {
+									setValue('quantity', Number(nextValue), {
+										shouldDirty: true,
+									});
+								}}
 							/>
-							{errors.quantity ? (
-								<span className="create-order-modal__error">
-									{errors.quantity.message}
-								</span>
-							) : null}
-						</label>
+						</div>
 
-						<p className="create-order-modal__status-note">
-							Status inicial: Aberta
+						<p className="create-order-modal__status-note ui-text-input__label">
+							Status inicial: <span className="font-normal">Aberta</span>
 						</p>
 
 						{errors.root ? (
@@ -189,13 +192,14 @@ const CreateOrderModal = ({
 							disabled={isSubmitting}
 							form="create-order-form"
 							type="submit"
+							width="full"
 							variant="primary"
 						>
 							Criar
 						</Button>
 					</div>
 					<div className="create-order-modal__cancel-button">
-						<Button variant="secondary" onClick={closeModal}>
+						<Button width="full" variant="secondary" onClick={closeModal}>
 							Cancelar
 						</Button>
 					</div>

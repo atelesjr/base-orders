@@ -30,6 +30,7 @@
 	--text-size-18: clamp(1.1rem, 1rem + 0.5vw, 1.8rem);
 	/* Base: 11px (mobile) → fluid scale → 16px (desktop) */
 	--font-size-base: clamp(1.1rem, 1rem + 0.5vw, 1.6rem);
+	--text-size-16: clamp(1.1rem, 1rem + 0.5vw, 1.6rem);
 	/* Small: 10px (mobile) → fluid scale → 14px (desktop) */
 	--text-grid-sm: clamp(1rem, 0.9rem + 0.4vw, 1.4rem);
 	/* Extra Small: 10px (mobile) → fluid scale → 12px (desktop) */

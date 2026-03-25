@@ -13,7 +13,7 @@
 }
 
 .ui-radio-input__option {
-	@apply inline-flex items-center gap-2 text-grid-sm text-black transition-all duration-200 cursor-pointer;
+	@apply inline-flex items-center gap-2 text-[1.6rem] text-black transition-all duration-200 cursor-pointer;
 
 	&:hover {
 		@apply text-green font-semibold;
@@ -21,7 +21,7 @@
 }
 
 .ui-radio-input__option input {
-	@apply h-4 w-4 border border-black transition-colors duration-200;
+	@apply h-6 w-6 border border-black transition-colors duration-200;
 	@apply hover:border-green;
 	@apply focus-visible:outline-2 focus-visible:outline-green accent-green;
 }

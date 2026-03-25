@@ -7,9 +7,14 @@ export const createOrderSchema = z.object({
 		.min(1, 'Instrumento e obrigatorio')
 		.max(30, 'Instrumento deve ter no maximo 30 caracteres')
 		.transform((value) => value.toUpperCase()),
-	side: z.enum(['Compra', 'Venda'], {
-		error: 'Lado e obrigatorio',
-	}),
+	side: z
+		.enum(['Compra', 'Venda'], {
+			error: 'Lado e obrigatorio',
+		})
+		.optional()
+		.refine((val) => val === 'Compra' || val === 'Venda', {
+			message: 'Lado e obrigatorio',
+		}),
 	price: z
 		.number({ error: 'Preco e obrigatorio' })
 		.finite('Preco invalido')

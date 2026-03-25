@@ -20,20 +20,31 @@
 	@apply relative gap-1;
 }
 
+.orders-grid__filter-field .ui-date-picker-input {
+	@apply relative gap-1;
+}
+
 .orders-grid__filter-field .ui-text-input__input,
-.orders-grid__filter-select-input {
+.orders-grid__filter-select-input,
+.orders-grid__filter-date-input {
 	@apply h-[3.5rem] rounded border border-black bg-white px-3 text-(length:--font-size-base) font-medium leading-none transition-colors duration-200;
 	@apply hover:border-green;
 }
 
 .orders-grid__filter-select-input:focus,
-.orders-grid__filter-select-input:focus-visible {
+.orders-grid__filter-select-input:focus-visible,
+.orders-grid__filter-date-input:focus,
+.orders-grid__filter-date-input:focus-visible {
 	@apply outline-2 outline-green;
 	outline-offset: 2px;
 }
 
 .orders-grid__filter-field .ui-select-input__menu {
 	@apply absolute left-0 top-full z-30 -mt-px w-full;
+}
+
+.orders-grid__filter-date-popover {
+	@apply right-0 left-auto;
 }
 
 .orders-grid__filter-select {
@@ -143,5 +154,9 @@
 
 	.orders-grid__date-picker-popover {
 		@apply right-auto left-0 w-[min(320px,calc(100vw-2rem))];
+	}
+
+	.orders-grid__filter-date-popover {
+		@apply right-auto left-0;
 	}
 }

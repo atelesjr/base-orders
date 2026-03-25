@@ -1,6 +1,6 @@
 import TextInput from '@/components/ui/inputs/TextInput';
 import SelectInput from '@/components/ui/inputs/SelectInput';
-import { OrdersGridFilterDatePicker } from './FilterDatePicker';
+import DatePickerInput from '@/components/ui/inputs/DatePickerInput';
 import {
 	DATE_FILTER_FIELD,
 	SELECT_FILTER_FIELDS,
@@ -51,17 +51,24 @@ export const OrdersGridFiltersFields = ({
 				</div>
 			))}
 
-			<label className="orders-grid__filter-field" htmlFor={DATE_FILTER_FIELD.id}>
-				<span>{DATE_FILTER_FIELD.label}</span>
-				<OrdersGridFilterDatePicker
-					ariaLabel={DATE_FILTER_FIELD.label}
+			<div className="orders-grid__filter-field">
+				<DatePickerInput.Root
+					aria-label={DATE_FILTER_FIELD.label}
+					className="orders-grid__filter-date-input"
 					id={DATE_FILTER_FIELD.id}
-					onChange={(nextValue) => {
+					label={DATE_FILTER_FIELD.label}
+					name={DATE_FILTER_FIELD.key}
+					onValueChange={(nextValue) => {
 						onFieldChange(DATE_FILTER_FIELD.key, nextValue);
 					}}
 					value={formState.date}
-				/>
-			</label>
+				>
+					<DatePickerInput.Label />
+					<DatePickerInput.Trigger />
+					<DatePickerInput.Popover className="orders-grid__filter-date-popover" />
+					<DatePickerInput.Error />
+				</DatePickerInput.Root>
+			</div>
 		</div>
 	);
 };

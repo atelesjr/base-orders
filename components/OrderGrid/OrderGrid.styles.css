@@ -4,6 +4,10 @@
 	@apply w-full;
 }
 
+.orders-grid .ui-table__caption {
+	@apply sr-only;
+}
+
 .orders-grid__title {
 	@apply mb-6;
 }

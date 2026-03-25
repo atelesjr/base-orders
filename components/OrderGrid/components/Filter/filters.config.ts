@@ -54,6 +54,16 @@ export const TEXT_FILTER_FIELDS: TextFilterFieldConfig[] = [
 
 export const SELECT_FILTER_FIELDS: SelectFilterFieldConfig[] = [
 	{
+		key: 'side',
+		id: 'orders-filter-side',
+		label: 'Lado',
+		options: [
+			{ label: 'Todos', value: '' },
+			{ label: 'Compra', value: 'Compra' },
+			{ label: 'Venda', value: 'Venda' },
+		],
+	},
+	{
 		key: 'status',
 		id: 'orders-filter-status',
 		label: 'Status',
@@ -63,16 +73,6 @@ export const SELECT_FILTER_FIELDS: SelectFilterFieldConfig[] = [
 			{ label: 'Parcial', value: 'Parcial' },
 			{ label: 'Executada', value: 'Executada' },
 			{ label: 'Cancelada', value: 'Cancelada' },
-		],
-	},
-	{
-		key: 'side',
-		id: 'orders-filter-side',
-		label: 'Lado',
-		options: [
-			{ label: 'Todos', value: '' },
-			{ label: 'Compra', value: 'Compra' },
-			{ label: 'Venda', value: 'Venda' },
 		],
 	},
 ];

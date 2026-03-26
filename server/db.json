@@ -1,1049 +1,1205 @@
 {
-  "orders": [
-    {
-      "id": "1773689970196",
-      "instrument": "PETR4",
-      "side": "Compra",
-      "price": 34.5,
-      "quantity": 100,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-13T10:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T10:00:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-13T10:05:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970197",
-      "instrument": "BTC/USD",
-      "side": "Venda",
-      "price": 65000,
-      "quantity": 0.5,
-      "remainingQuantity": 0.2,
-      "status": "Parcial",
-      "timestamp": "2026-03-13T10:15:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T10:15:00Z"
-        },
-        {
-          "status": "Parcial",
-          "updatedAt": "2026-03-13T10:20:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970198",
-      "instrument": "VALE3",
-      "side": "Compra",
-      "price": 68.2,
-      "quantity": 500,
-      "remainingQuantity": 500,
-      "status": "Aberta",
-      "timestamp": "2026-03-13T11:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T11:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970199",
-      "instrument": "ETH/USD",
-      "side": "Compra",
-      "price": 3500,
-      "quantity": 2,
-      "remainingQuantity": 2,
-      "status": "Aberta",
-      "timestamp": "2026-03-13T11:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T11:30:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970200",
-      "instrument": "AAPL",
-      "side": "Venda",
-      "price": 175,
-      "quantity": 50,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-13T12:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T12:00:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-13T12:10:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970201",
-      "instrument": "ITUB4",
-      "side": "Compra",
-      "price": 32.1,
-      "quantity": 1000,
-      "remainingQuantity": 1000,
-      "status": "Cancelada",
-      "timestamp": "2026-03-13T12:45:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T12:45:00Z"
-        },
-        {
-          "status": "Cancelada",
-          "updatedAt": "2026-03-13T12:50:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970202",
-      "instrument": "SOL/USD",
-      "side": "Venda",
-      "price": 145,
-      "quantity": 10,
-      "remainingQuantity": 4,
-      "status": "Parcial",
-      "timestamp": "2026-03-13T13:10:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T13:10:00Z"
-        },
-        {
-          "status": "Parcial",
-          "updatedAt": "2026-03-13T13:15:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970203",
-      "instrument": "MGLU3",
-      "side": "Compra",
-      "price": 2.15,
-      "quantity": 5000,
-      "remainingQuantity": 5000,
-      "status": "Aberta",
-      "timestamp": "2026-03-13T13:40:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T13:40:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970204",
-      "instrument": "TSLA",
-      "side": "Venda",
-      "price": 202,
-      "quantity": 20,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-13T14:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T14:00:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-13T14:05:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970205",
-      "instrument": "BBDC4",
-      "side": "Compra",
-      "price": 14.2,
-      "quantity": 2000,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-13T14:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T14:30:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-13T14:40:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970206",
-      "instrument": "PETR4",
-      "side": "Venda",
-      "price": 35.1,
-      "quantity": 300,
-      "remainingQuantity": 300,
-      "status": "Aberta",
-      "timestamp": "2026-03-13T15:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T15:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970207",
-      "instrument": "BTC/USD",
-      "side": "Compra",
-      "price": 64500,
-      "quantity": 0.1,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-13T15:15:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T15:15:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-13T15:20:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970208",
-      "instrument": "VALE3",
-      "side": "Venda",
-      "price": 69,
-      "quantity": 100,
-      "remainingQuantity": 100,
-      "status": "Cancelada",
-      "timestamp": "2026-03-13T15:45:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T15:45:00Z"
-        },
-        {
-          "status": "Cancelada",
-          "updatedAt": "2026-03-13T15:55:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970209",
-      "instrument": "ETH/USD",
-      "side": "Venda",
-      "price": 3600,
-      "quantity": 1,
-      "remainingQuantity": 0.5,
-      "status": "Parcial",
-      "timestamp": "2026-03-13T16:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T16:00:00Z"
-        },
-        {
-          "status": "Parcial",
-          "updatedAt": "2026-03-13T16:10:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970210",
-      "instrument": "GOOGL",
-      "side": "Compra",
-      "price": 140,
-      "quantity": 30,
-      "remainingQuantity": 30,
-      "status": "Aberta",
-      "timestamp": "2026-03-13T16:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T16:30:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970211",
-      "instrument": "BBAS3",
-      "side": "Compra",
-      "price": 55.4,
-      "quantity": 200,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-13T16:45:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T16:45:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-13T16:55:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970212",
-      "instrument": "SOL/USD",
-      "side": "Compra",
-      "price": 140,
-      "quantity": 50,
-      "remainingQuantity": 50,
-      "status": "Aberta",
-      "timestamp": "2026-03-13T17:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T17:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970213",
-      "instrument": "MSFT",
-      "side": "Venda",
-      "price": 415,
-      "quantity": 15,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-13T17:20:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T17:20:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-13T17:30:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970214",
-      "instrument": "ABEV3",
-      "side": "Compra",
-      "price": 12.5,
-      "quantity": 5000,
-      "remainingQuantity": 2000,
-      "status": "Parcial",
-      "timestamp": "2026-03-13T17:40:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T17:40:00Z"
-        },
-        {
-          "status": "Parcial",
-          "updatedAt": "2026-03-13T17:50:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970215",
-      "instrument": "ADA/USD",
-      "side": "Venda",
-      "price": 0.65,
-      "quantity": 1000,
-      "remainingQuantity": 1000,
-      "status": "Aberta",
-      "timestamp": "2026-03-13T18:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-13T18:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970216",
-      "instrument": "PETR4",
-      "side": "Compra",
-      "price": 34.6,
-      "quantity": 200,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-14T09:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T09:00:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-14T09:05:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970217",
-      "instrument": "BTC/USD",
-      "side": "Venda",
-      "price": 66000,
-      "quantity": 0.2,
-      "remainingQuantity": 0.2,
-      "status": "Cancelada",
-      "timestamp": "2026-03-14T09:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T09:30:00Z"
-        },
-        {
-          "status": "Cancelada",
-          "updatedAt": "2026-03-14T09:40:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970218",
-      "instrument": "VALE3",
-      "side": "Compra",
-      "price": 67.5,
-      "quantity": 400,
-      "remainingQuantity": 100,
-      "status": "Parcial",
-      "timestamp": "2026-03-14T10:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T10:00:00Z"
-        },
-        {
-          "status": "Parcial",
-          "updatedAt": "2026-03-14T10:15:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970219",
-      "instrument": "NVDA",
-      "side": "Compra",
-      "price": 880,
-      "quantity": 10,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-14T10:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T10:30:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-14T10:45:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970220",
-      "instrument": "WEGE3",
-      "side": "Venda",
-      "price": 38.2,
-      "quantity": 300,
-      "remainingQuantity": 300,
-      "status": "Aberta",
-      "timestamp": "2026-03-14T11:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T11:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970221",
-      "instrument": "DOT/USD",
-      "side": "Compra",
-      "price": 9.5,
-      "quantity": 100,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-14T11:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T11:30:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-14T11:40:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970222",
-      "instrument": "LINK/USD",
-      "side": "Venda",
-      "price": 18,
-      "quantity": 50,
-      "remainingQuantity": 50,
-      "status": "Aberta",
-      "timestamp": "2026-03-14T12:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T12:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970223",
-      "instrument": "B3SA3",
-      "side": "Compra",
-      "price": 11.8,
-      "quantity": 1000,
-      "remainingQuantity": 1000,
-      "status": "Cancelada",
-      "timestamp": "2026-03-14T12:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T12:30:00Z"
-        },
-        {
-          "status": "Cancelada",
-          "updatedAt": "2026-03-14T12:40:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970224",
-      "instrument": "AMZN",
-      "side": "Venda",
-      "price": 175,
-      "quantity": 40,
-      "remainingQuantity": 10,
-      "status": "Parcial",
-      "timestamp": "2026-03-14T13:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T13:00:00Z"
-        },
-        {
-          "status": "Parcial",
-          "updatedAt": "2026-03-14T13:15:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970225",
-      "instrument": "GGBR4",
-      "side": "Compra",
-      "price": 22.5,
-      "quantity": 600,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-14T13:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T13:30:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-14T13:45:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970226",
-      "instrument": "META",
-      "side": "Compra",
-      "price": 490,
-      "quantity": 5,
-      "remainingQuantity": 5,
-      "status": "Aberta",
-      "timestamp": "2026-03-14T14:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T14:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970227",
-      "instrument": "RENT3",
-      "side": "Venda",
-      "price": 54.2,
-      "quantity": 200,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-14T14:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T14:30:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-14T14:45:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970228",
-      "instrument": "AVAX/USD",
-      "side": "Compra",
-      "price": 42,
-      "quantity": 30,
-      "remainingQuantity": 30,
-      "status": "Aberta",
-      "timestamp": "2026-03-14T15:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T15:00:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970229",
-      "instrument": "LREN3",
-      "side": "Compra",
-      "price": 16.8,
-      "quantity": 400,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-14T15:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T15:30:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-14T15:45:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970230",
-      "instrument": "NFLX",
-      "side": "Venda",
-      "price": 605,
-      "quantity": 8,
-      "remainingQuantity": 8,
-      "status": "Cancelada",
-      "timestamp": "2026-03-14T16:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T16:00:00Z"
-        },
-        {
-          "status": "Cancelada",
-          "updatedAt": "2026-03-14T16:15:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970231",
-      "instrument": "SUZB3",
-      "side": "Compra",
-      "price": 62.1,
-      "quantity": 150,
-      "remainingQuantity": 50,
-      "status": "Parcial",
-      "timestamp": "2026-03-14T16:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T16:30:00Z"
-        },
-        {
-          "status": "Parcial",
-          "updatedAt": "2026-03-14T16:40:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970232",
-      "instrument": "MATIC/USD",
-      "side": "Venda",
-      "price": 1.1,
-      "quantity": 500,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-14T17:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T17:00:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-14T17:10:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970233",
-      "instrument": "JBSS3",
-      "side": "Compra",
-      "price": 24.5,
-      "quantity": 1000,
-      "remainingQuantity": 1000,
-      "status": "Aberta",
-      "timestamp": "2026-03-14T17:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T17:30:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970234",
-      "instrument": "DIS",
-      "side": "Venda",
-      "price": 112,
-      "quantity": 25,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-14T18:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T18:00:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-14T18:15:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970235",
-      "instrument": "RAIL3",
-      "side": "Compra",
-      "price": 22.1,
-      "quantity": 800,
-      "remainingQuantity": 800,
-      "status": "Aberta",
-      "timestamp": "2026-03-14T18:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-14T18:30:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970236",
-      "instrument": "PETR4",
-      "side": "Venda",
-      "price": 34.9,
-      "quantity": 500,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-15T09:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-15T09:00:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-15T09:10:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970237",
-      "instrument": "BTC/USD",
-      "side": "Compra",
-      "price": 63000,
-      "quantity": 0.05,
-      "remainingQuantity": 0.05,
-      "status": "Aberta",
-      "timestamp": "2026-03-15T09:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-15T09:30:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970238",
-      "instrument": "VALE3",
-      "side": "Venda",
-      "price": 68.5,
-      "quantity": 200,
-      "remainingQuantity": 200,
-      "status": "Cancelada",
-      "timestamp": "2026-03-15T10:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-15T10:00:00Z"
-        },
-        {
-          "status": "Cancelada",
-          "updatedAt": "2026-03-15T10:10:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970239",
-      "instrument": "UNI/USD",
-      "side": "Compra",
-      "price": 12,
-      "quantity": 100,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-15T10:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-15T10:30:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-15T10:40:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970240",
-      "instrument": "HYPE3",
-      "side": "Venda",
-      "price": 31.5,
-      "quantity": 300,
-      "remainingQuantity": 150,
-      "status": "Parcial",
-      "timestamp": "2026-03-15T11:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-15T11:00:00Z"
-        },
-        {
-          "status": "Parcial",
-          "updatedAt": "2026-03-15T11:15:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970241",
-      "instrument": "LTC/USD",
-      "side": "Compra",
-      "price": 85,
-      "quantity": 10,
-      "remainingQuantity": 10,
-      "status": "Aberta",
-      "timestamp": "2026-03-15T11:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-15T11:30:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970242",
-      "instrument": "RADL3",
-      "side": "Compra",
-      "price": 26.8,
-      "quantity": 200,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-15T12:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-15T12:00:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-15T12:15:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970243",
-      "instrument": "VIVT3",
-      "side": "Venda",
-      "price": 50.5,
-      "quantity": 100,
-      "remainingQuantity": 100,
-      "status": "Aberta",
-      "timestamp": "2026-03-15T12:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-15T12:30:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970244",
-      "instrument": "LINK/USD",
-      "side": "Compra",
-      "price": 17.5,
-      "quantity": 40,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-15T13:00:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-15T13:00:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-15T13:10:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970245",
-      "instrument": "CSNA3",
-      "side": "Venda",
-      "price": 15.2,
-      "quantity": 1000,
-      "remainingQuantity": 0,
-      "status": "Executada",
-      "timestamp": "2026-03-15T13:30:00Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-15T13:30:00Z"
-        },
-        {
-          "status": "Executada",
-          "updatedAt": "2026-03-15T13:45:00Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970246",
-      "instrument": "RDDS",
-      "side": "Venda",
-      "price": 45,
-      "quantity": 150,
-      "remainingQuantity": 150,
-      "status": "Aberta",
-      "timestamp": "2026-03-16T19:39:30.196Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-16T19:39:30.196Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970247",
-      "instrument": "ddd",
-      "side": "Compra",
-      "price": 4.5,
-      "quantity": 200,
-      "remainingQuantity": 200,
-      "status": "Aberta",
-      "timestamp": "2026-03-16T19:47:49.821Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-16T19:47:49.821Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970248",
-      "clientOrderId": "CL-1773690851507-1773689970248",
-      "exchangeOrderId": null,
-      "executionId": null,
-      "instrument": "ERE",
-      "side": "Venda",
-      "price": 6,
-      "quantity": 4,
-      "remainingQuantity": 4,
-      "status": "Aberta",
-      "timestamp": "2026-03-16T19:54:11.284Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-16T19:54:11.284Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970249",
-      "clientOrderId": "CL-1773691738861-1773689970249",
-      "exchangeOrderId": null,
-      "executionId": null,
-      "instrument": "DDD",
-      "side": "Compra",
-      "price": 2,
-      "quantity": 1,
-      "remainingQuantity": 1,
-      "status": "Aberta",
-      "timestamp": "2026-03-16T20:08:58.852Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-16T20:08:58.852Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970250",
-      "clientOrderId": "CL-1773692428892-1773689970250",
-      "exchangeOrderId": null,
-      "executionId": null,
-      "instrument": "AAA",
-      "side": "Compra",
-      "price": 1,
-      "quantity": 1,
-      "remainingQuantity": 1,
-      "status": "Aberta",
-      "timestamp": "2026-03-16T20:20:28.860Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-16T20:20:28.860Z"
-        }
-      ]
-    },
-    {
-      "id": "1773689970251",
-      "clientOrderId": "CL-1774478488053-1773689970251",
-      "exchangeOrderId": null,
-      "executionId": null,
-      "instrument": "WEA",
-      "side": "Compra",
-      "price": 4.3,
-      "quantity": 236,
-      "remainingQuantity": 236,
-      "status": "Aberta",
-      "timestamp": "2026-03-25T22:41:28.035Z",
-      "statusHistory": [
-        {
-          "status": "Aberta",
-          "updatedAt": "2026-03-25T22:41:28.035Z"
-        }
-      ]
-    }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+	"orders": [
+		{
+			"id": "1773689970196",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "PETR4",
+			"side": "Compra",
+			"price": 34.5,
+			"quantity": 100,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-13T10:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T10:00:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-13T10:05:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970197",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "BTC/USD",
+			"side": "Venda",
+			"price": 65000,
+			"quantity": 0.5,
+			"remainingQuantity": 0.2,
+			"status": "Parcial",
+			"timestamp": "2026-03-13T10:15:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T10:15:00Z"
+				},
+				{
+					"status": "Parcial",
+					"updatedAt": "2026-03-13T10:20:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970198",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "VALE3",
+			"side": "Compra",
+			"price": 68.2,
+			"quantity": 500,
+			"remainingQuantity": 500,
+			"status": "Aberta",
+			"timestamp": "2026-03-13T11:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T11:00:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970199",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "ETH/USD",
+			"side": "Compra",
+			"price": 3500,
+			"quantity": 2,
+			"remainingQuantity": 2,
+			"status": "Aberta",
+			"timestamp": "2026-03-13T11:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T11:30:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970200",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "AAPL",
+			"side": "Venda",
+			"price": 175,
+			"quantity": 50,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-13T12:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T12:00:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-13T12:10:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970201",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "ITUB4",
+			"side": "Compra",
+			"price": 32.1,
+			"quantity": 1000,
+			"remainingQuantity": 1000,
+			"status": "Cancelada",
+			"timestamp": "2026-03-13T12:45:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T12:45:00Z"
+				},
+				{
+					"status": "Cancelada",
+					"updatedAt": "2026-03-13T12:50:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970202",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "SOL/USD",
+			"side": "Venda",
+			"price": 145,
+			"quantity": 10,
+			"remainingQuantity": 4,
+			"status": "Parcial",
+			"timestamp": "2026-03-13T13:10:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T13:10:00Z"
+				},
+				{
+					"status": "Parcial",
+					"updatedAt": "2026-03-13T13:15:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970203",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "MGLU3",
+			"side": "Compra",
+			"price": 2.15,
+			"quantity": 5000,
+			"remainingQuantity": 5000,
+			"status": "Aberta",
+			"timestamp": "2026-03-13T13:40:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T13:40:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970204",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "TSLA",
+			"side": "Venda",
+			"price": 202,
+			"quantity": 20,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-13T14:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T14:00:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-13T14:05:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970205",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "BBDC4",
+			"side": "Compra",
+			"price": 14.2,
+			"quantity": 2000,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-13T14:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T14:30:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-13T14:40:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970206",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "PETR4",
+			"side": "Venda",
+			"price": 35.1,
+			"quantity": 300,
+			"remainingQuantity": 300,
+			"status": "Aberta",
+			"timestamp": "2026-03-13T15:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T15:00:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970207",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "BTC/USD",
+			"side": "Compra",
+			"price": 64500,
+			"quantity": 0.1,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-13T15:15:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T15:15:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-13T15:20:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970208",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "VALE3",
+			"side": "Venda",
+			"price": 69,
+			"quantity": 100,
+			"remainingQuantity": 100,
+			"status": "Cancelada",
+			"timestamp": "2026-03-13T15:45:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T15:45:00Z"
+				},
+				{
+					"status": "Cancelada",
+					"updatedAt": "2026-03-13T15:55:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970209",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "ETH/USD",
+			"side": "Venda",
+			"price": 3600,
+			"quantity": 1,
+			"remainingQuantity": 0.5,
+			"status": "Parcial",
+			"timestamp": "2026-03-13T16:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T16:00:00Z"
+				},
+				{
+					"status": "Parcial",
+					"updatedAt": "2026-03-13T16:10:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970210",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "GOOGL",
+			"side": "Compra",
+			"price": 140,
+			"quantity": 30,
+			"remainingQuantity": 30,
+			"status": "Aberta",
+			"timestamp": "2026-03-13T16:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T16:30:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970211",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "BBAS3",
+			"side": "Compra",
+			"price": 55.4,
+			"quantity": 200,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-13T16:45:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T16:45:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-13T16:55:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970212",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "SOL/USD",
+			"side": "Compra",
+			"price": 140,
+			"quantity": 50,
+			"remainingQuantity": 50,
+			"status": "Aberta",
+			"timestamp": "2026-03-13T17:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T17:00:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970213",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "MSFT",
+			"side": "Venda",
+			"price": 415,
+			"quantity": 15,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-13T17:20:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T17:20:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-13T17:30:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970214",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "ABEV3",
+			"side": "Compra",
+			"price": 12.5,
+			"quantity": 5000,
+			"remainingQuantity": 2000,
+			"status": "Parcial",
+			"timestamp": "2026-03-13T17:40:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T17:40:00Z"
+				},
+				{
+					"status": "Parcial",
+					"updatedAt": "2026-03-13T17:50:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970215",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "ADA/USD",
+			"side": "Venda",
+			"price": 0.65,
+			"quantity": 1000,
+			"remainingQuantity": 1000,
+			"status": "Aberta",
+			"timestamp": "2026-03-13T18:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-13T18:00:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970216",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "PETR4",
+			"side": "Compra",
+			"price": 34.6,
+			"quantity": 200,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-14T09:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T09:00:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-14T09:05:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970217",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "BTC/USD",
+			"side": "Venda",
+			"price": 66000,
+			"quantity": 0.2,
+			"remainingQuantity": 0.2,
+			"status": "Cancelada",
+			"timestamp": "2026-03-14T09:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T09:30:00Z"
+				},
+				{
+					"status": "Cancelada",
+					"updatedAt": "2026-03-14T09:40:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970218",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "VALE3",
+			"side": "Compra",
+			"price": 67.5,
+			"quantity": 400,
+			"remainingQuantity": 100,
+			"status": "Parcial",
+			"timestamp": "2026-03-14T10:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T10:00:00Z"
+				},
+				{
+					"status": "Parcial",
+					"updatedAt": "2026-03-14T10:15:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970219",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "NVDA",
+			"side": "Compra",
+			"price": 880,
+			"quantity": 10,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-14T10:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T10:30:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-14T10:45:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970220",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "WEGE3",
+			"side": "Venda",
+			"price": 38.2,
+			"quantity": 300,
+			"remainingQuantity": 300,
+			"status": "Aberta",
+			"timestamp": "2026-03-14T11:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T11:00:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970221",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "DOT/USD",
+			"side": "Compra",
+			"price": 9.5,
+			"quantity": 100,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-14T11:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T11:30:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-14T11:40:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970222",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "LINK/USD",
+			"side": "Venda",
+			"price": 18,
+			"quantity": 50,
+			"remainingQuantity": 50,
+			"status": "Aberta",
+			"timestamp": "2026-03-14T12:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T12:00:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970223",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "B3SA3",
+			"side": "Compra",
+			"price": 11.8,
+			"quantity": 1000,
+			"remainingQuantity": 1000,
+			"status": "Cancelada",
+			"timestamp": "2026-03-14T12:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T12:30:00Z"
+				},
+				{
+					"status": "Cancelada",
+					"updatedAt": "2026-03-14T12:40:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970224",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "AMZN",
+			"side": "Venda",
+			"price": 175,
+			"quantity": 40,
+			"remainingQuantity": 10,
+			"status": "Parcial",
+			"timestamp": "2026-03-14T13:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T13:00:00Z"
+				},
+				{
+					"status": "Parcial",
+					"updatedAt": "2026-03-14T13:15:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970225",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "GGBR4",
+			"side": "Compra",
+			"price": 22.5,
+			"quantity": 600,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-14T13:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T13:30:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-14T13:45:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970226",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "META",
+			"side": "Compra",
+			"price": 490,
+			"quantity": 5,
+			"remainingQuantity": 5,
+			"status": "Aberta",
+			"timestamp": "2026-03-14T14:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T14:00:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970227",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "RENT3",
+			"side": "Venda",
+			"price": 54.2,
+			"quantity": 200,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-14T14:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T14:30:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-14T14:45:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970228",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "AVAX/USD",
+			"side": "Compra",
+			"price": 42,
+			"quantity": 30,
+			"remainingQuantity": 30,
+			"status": "Aberta",
+			"timestamp": "2026-03-14T15:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T15:00:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970229",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "LREN3",
+			"side": "Compra",
+			"price": 16.8,
+			"quantity": 400,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-14T15:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T15:30:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-14T15:45:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970230",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "NFLX",
+			"side": "Venda",
+			"price": 605,
+			"quantity": 8,
+			"remainingQuantity": 8,
+			"status": "Cancelada",
+			"timestamp": "2026-03-14T16:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T16:00:00Z"
+				},
+				{
+					"status": "Cancelada",
+					"updatedAt": "2026-03-14T16:15:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970231",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "SUZB3",
+			"side": "Compra",
+			"price": 62.1,
+			"quantity": 150,
+			"remainingQuantity": 50,
+			"status": "Parcial",
+			"timestamp": "2026-03-14T16:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T16:30:00Z"
+				},
+				{
+					"status": "Parcial",
+					"updatedAt": "2026-03-14T16:40:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970232",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "MATIC/USD",
+			"side": "Venda",
+			"price": 1.1,
+			"quantity": 500,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-14T17:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T17:00:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-14T17:10:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970233",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "JBSS3",
+			"side": "Compra",
+			"price": 24.5,
+			"quantity": 1000,
+			"remainingQuantity": 1000,
+			"status": "Aberta",
+			"timestamp": "2026-03-14T17:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T17:30:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970234",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "DIS",
+			"side": "Venda",
+			"price": 112,
+			"quantity": 25,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-14T18:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T18:00:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-14T18:15:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970235",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "RAIL3",
+			"side": "Compra",
+			"price": 22.1,
+			"quantity": 800,
+			"remainingQuantity": 800,
+			"status": "Aberta",
+			"timestamp": "2026-03-14T18:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-14T18:30:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970236",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "PETR4",
+			"side": "Venda",
+			"price": 34.9,
+			"quantity": 500,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-15T09:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-15T09:00:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-15T09:10:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970237",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "BTC/USD",
+			"side": "Compra",
+			"price": 63000,
+			"quantity": 0.05,
+			"remainingQuantity": 0.05,
+			"status": "Aberta",
+			"timestamp": "2026-03-15T09:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-15T09:30:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970238",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "VALE3",
+			"side": "Venda",
+			"price": 68.5,
+			"quantity": 200,
+			"remainingQuantity": 200,
+			"status": "Cancelada",
+			"timestamp": "2026-03-15T10:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-15T10:00:00Z"
+				},
+				{
+					"status": "Cancelada",
+					"updatedAt": "2026-03-15T10:10:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970239",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "UNI/USD",
+			"side": "Compra",
+			"price": 12,
+			"quantity": 100,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-15T10:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-15T10:30:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-15T10:40:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970240",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "HYPE3",
+			"side": "Venda",
+			"price": 31.5,
+			"quantity": 300,
+			"remainingQuantity": 150,
+			"status": "Parcial",
+			"timestamp": "2026-03-15T11:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-15T11:00:00Z"
+				},
+				{
+					"status": "Parcial",
+					"updatedAt": "2026-03-15T11:15:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970241",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "LTC/USD",
+			"side": "Compra",
+			"price": 85,
+			"quantity": 10,
+			"remainingQuantity": 10,
+			"status": "Aberta",
+			"timestamp": "2026-03-15T11:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-15T11:30:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970242",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "RADL3",
+			"side": "Compra",
+			"price": 26.8,
+			"quantity": 200,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-15T12:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-15T12:00:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-15T12:15:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970243",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "VIVT3",
+			"side": "Venda",
+			"price": 50.5,
+			"quantity": 100,
+			"remainingQuantity": 100,
+			"status": "Aberta",
+			"timestamp": "2026-03-15T12:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-15T12:30:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970244",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "LINK/USD",
+			"side": "Compra",
+			"price": 17.5,
+			"quantity": 40,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-15T13:00:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-15T13:00:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-15T13:10:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970245",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "CSNA3",
+			"side": "Venda",
+			"price": 15.2,
+			"quantity": 1000,
+			"remainingQuantity": 0,
+			"status": "Executada",
+			"timestamp": "2026-03-15T13:30:00Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-15T13:30:00Z"
+				},
+				{
+					"status": "Executada",
+					"updatedAt": "2026-03-15T13:45:00Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970246",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "RDDS",
+			"side": "Venda",
+			"price": 45,
+			"quantity": 150,
+			"remainingQuantity": 150,
+			"status": "Aberta",
+			"timestamp": "2026-03-16T19:39:30.196Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-16T19:39:30.196Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970247",
+			"clientOrderId": null,
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "ddd",
+			"side": "Compra",
+			"price": 4.5,
+			"quantity": 200,
+			"remainingQuantity": 200,
+			"status": "Aberta",
+			"timestamp": "2026-03-16T19:47:49.821Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-16T19:47:49.821Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970248",
+			"clientOrderId": "CL-1773690851507-1773689970248",
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "ERE",
+			"side": "Venda",
+			"price": 6,
+			"quantity": 4,
+			"remainingQuantity": 4,
+			"status": "Aberta",
+			"timestamp": "2026-03-16T19:54:11.284Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-16T19:54:11.284Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970249",
+			"clientOrderId": "CL-1773691738861-1773689970249",
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "DDD",
+			"side": "Compra",
+			"price": 2,
+			"quantity": 1,
+			"remainingQuantity": 1,
+			"status": "Aberta",
+			"timestamp": "2026-03-16T20:08:58.852Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-16T20:08:58.852Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970250",
+			"clientOrderId": "CL-1773692428892-1773689970250",
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "AAA",
+			"side": "Compra",
+			"price": 1,
+			"quantity": 1,
+			"remainingQuantity": 1,
+			"status": "Aberta",
+			"timestamp": "2026-03-16T20:20:28.860Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-16T20:20:28.860Z"
+				}
+			]
+		},
+		{
+			"id": "1773689970251",
+			"clientOrderId": "CL-1774478488053-1773689970251",
+			"exchangeOrderId": null,
+			"executionId": null,
+			"instrument": "WEA",
+			"side": "Compra",
+			"price": 4.3,
+			"quantity": 236,
+			"remainingQuantity": 236,
+			"status": "Aberta",
+			"timestamp": "2026-03-25T22:41:28.035Z",
+			"statusHistory": [
+				{
+					"status": "Aberta",
+					"updatedAt": "2026-03-25T22:41:28.035Z"
+				}
+			]
+		}
+	],
+	"$schema": "./node_modules/json-server/schema.json"
 }

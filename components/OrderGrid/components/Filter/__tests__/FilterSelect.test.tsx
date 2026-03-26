@@ -36,13 +36,22 @@ describe('OrdersGridFilterSelect', () => {
 			/>,
 		);
 
-		expect(screen.getByText('Sem opcoes')).toBeInTheDocument();
+		// Use a regex matcher for 'Sem opções' to handle whitespace/case issues
+		// (Line 36)
+		try {
+			expect(screen.getByText(/Sem opções/i)).toBeInTheDocument();
+		} catch (e) {
+			screen.debug();
+			throw e;
+		}
+
 		const hiddenInput = document.querySelector(
 			'input[name="status"]',
 		) as HTMLInputElement;
 		expect(hiddenInput.value).toBe('');
 
 		fireEvent.click(screen.getByRole('button', { name: 'Status' }));
+		// (Line 44)
 		expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
 	});
 });

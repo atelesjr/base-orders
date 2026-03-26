@@ -2,6 +2,13 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import CreateOrderModal from '../index';
 
 describe('CreateOrderModal', () => {
+	const originalFetch = global.fetch;
+
+	afterEach(() => {
+		global.fetch = originalFetch;
+		jest.restoreAllMocks();
+	});
+
 	it('renders form and closes when cancelar is clicked', () => {
 		const onOpenChange = jest.fn();
 
@@ -30,7 +37,7 @@ describe('CreateOrderModal', () => {
 		fireEvent.click(screen.getByRole('button', { name: /criar/i }));
 
 		expect(
-			await screen.findByText('Instrumento e obrigatorio'),
+			await screen.findByText('Instrumento é obrigatório'),
 		).toBeInTheDocument();
 		expect(
 			await screen.findByText('Preço deve ser maior que zero'),
@@ -43,7 +50,7 @@ describe('CreateOrderModal', () => {
 	it('submits valid data and calls onCreated', async () => {
 		const onCreated = jest.fn();
 		const onOpenChange = jest.fn();
-		global.fetch = jest.fn().mockResolvedValue({ ok: true }) as jest.Mock;
+		global.fetch = jest.fn().mockResolvedValue({ ok: true }) as typeof fetch;
 
 		render(
 			<CreateOrderModal
@@ -56,13 +63,9 @@ describe('CreateOrderModal', () => {
 		fireEvent.change(screen.getByLabelText('Instrumento'), {
 			target: { value: 'petr4' },
 		});
-		expect(
-			(screen.getByLabelText('Instrumento') as HTMLInputElement).value,
-		).toBe('PETR4');
-		fireEvent.change(screen.getByLabelText('Lado'), {
-			target: { value: 'Compra' },
-		});
-		fireEvent.change(screen.getByLabelText('Preco'), {
+		expect(screen.getByDisplayValue('PETR4')).toBeInTheDocument();
+		fireEvent.click(screen.getByLabelText('Compra'));
+		fireEvent.change(screen.getByLabelText('Preço'), {
 			target: { value: '10' },
 		});
 		fireEvent.change(screen.getByLabelText('Quantidade'), {

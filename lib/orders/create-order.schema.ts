@@ -4,24 +4,24 @@ export const createOrderSchema = z.object({
 	instrument: z
 		.string()
 		.trim()
-		.min(1, 'Instrumento e obrigatorio')
-		.max(30, 'Instrumento deve ter no maximo 30 caracteres')
+		.min(1, 'Instrumento é obrigatório')
+		.max(30, 'Instrumento deve ter no máximo 30 caracteres')
 		.transform((value) => value.toUpperCase()),
 	side: z
 		.enum(['Compra', 'Venda'], {
-			error: 'Lado e obrigatorio',
+			error: 'Lado é obrigatório',
 		})
 		.optional()
 		.refine((val) => val === 'Compra' || val === 'Venda', {
-			message: 'Lado e obrigatorio',
+			message: 'Lado é obrigatório',
 		}),
 	price: z
-		.number({ error: 'Preco e obrigatorio' })
-		.finite('Preco invalido')
-		.positive('Preco deve ser maior que zero'),
+		.number({ error: 'Preço é obrigatório' })
+		.finite('Preço inválido')
+		.positive('Preço deve ser maior que zero'),
 	quantity: z
-		.number({ error: 'Quantidade e obrigatoria' })
-		.finite('Quantidade invalida')
+		.number({ error: 'Quantidade é obrigatória' })
+		.finite('Quantidade inválida')
 		.positive('Quantidade deve ser maior que zero'),
 });
 

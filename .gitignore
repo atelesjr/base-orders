@@ -19,6 +19,8 @@
 
 # production
 /build
+/storybook-static
+debug-storybook.log
 
 # misc
 .DS_Store
@@ -29,6 +31,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+
+# Copilot-generated uniform db template (do not upload)
+server/db.json.copilot-uniform
 
 # env files (can opt-in for committing if needed)
 .env*

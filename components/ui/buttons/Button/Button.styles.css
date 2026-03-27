@@ -1,0 +1,49 @@
+@reference '../../../../styles/globals.css';
+
+.ui-button {
+	@apply inline-flex items-center justify-center rounded-full border leading-none tracking-widest transition-all duration-200 cursor-pointer;
+}
+
+.ui-button--sm {
+	@apply h-10 px-5 text-grid-sm;
+}
+
+.ui-button--md {
+	@apply h-[3.25rem] px-8 text-(length:--font-size-base);
+}
+
+.ui-button--lg {
+	@apply h-14 px-10 text-(length:--text-size-18);
+}
+
+.ui-button--width-auto {
+	@apply w-auto;
+}
+
+.ui-button--width-full {
+	@apply w-full;
+}
+
+.ui-button--primary {
+	@apply border-green bg-green text-white font-semibold;
+}
+
+.ui-button--primary:hover {
+	@apply border-green-dark bg-green-dark text-white;
+}
+
+.ui-button--primary:active {
+	@apply border-green-dark bg-green-dark text-white;
+}
+
+.ui-button--secondary {
+	@apply border-gray-dark bg-gray-dark text-white font-semibold;
+}
+
+.ui-button--secondary:hover {
+	@apply border-gray-darker bg-gray-darker text-white;
+}
+
+.ui-button--secondary:active {
+	@apply border-gray-darker bg-gray-darker text-white;
+}

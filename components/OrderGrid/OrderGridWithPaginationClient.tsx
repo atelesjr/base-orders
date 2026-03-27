@@ -1,5 +1,7 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import CreateOrderModal from '@/components/CreateOrderModal';
 import OrderDetailsModal from '@/components/OrderDetailsModal';
 import type { Order } from '@/lib/orders/orders.types';
 import OrdersGrid from './index';
@@ -8,9 +10,9 @@ import type {
 	OrdersGridPaginationData,
 	OrdersGridSortState,
 } from './types';
-import { OrdersGridFiltersBar } from './parts/FiltersBar';
-import { OrdersGridPagination } from './parts/Pagination';
-import { OrdersGridToolbar } from './parts/Toolbar';
+import { OrdersGridFiltersBar } from './components/Filter/FiltersBar';
+import { OrdersGridPagination } from './components/Pagination';
+import { OrdersGridToolbar } from './components/Toolbar';
 import { useOrderGridWithPaginationController } from './useOrderGridWithPaginationController';
 
 type OrderGridWithPaginationClientProps = {
@@ -26,11 +28,15 @@ const OrderGridWithPaginationClient = ({
 	pagination,
 	sortState,
 }: OrderGridWithPaginationClientProps) => {
+	const router = useRouter();
 	const {
 		isFiltersOpen,
+		isCreateOrderOpen,
 		selectedOrder,
 		emptyStateMessage,
 		toggleFilters,
+		openCreateOrderModal,
+		handleCreateOrderOpenChange,
 		handleRowClick,
 		handleModalOpenChange,
 	} = useOrderGridWithPaginationController({ orders, filters });
@@ -39,8 +45,17 @@ const OrderGridWithPaginationClient = ({
 		<>
 			<OrdersGridToolbar
 				isFiltersOpen={isFiltersOpen}
+				onCreateOrderClick={openCreateOrderModal}
 				onFilterClick={toggleFilters}
 				pagination={pagination}
+			/>
+
+			<CreateOrderModal
+				onCreated={() => {
+					router.refresh();
+				}}
+				onOpenChange={handleCreateOrderOpenChange}
+				open={isCreateOrderOpen}
 			/>
 
 			{isFiltersOpen ? (

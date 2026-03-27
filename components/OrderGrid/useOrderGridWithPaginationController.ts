@@ -26,6 +26,7 @@ export const useOrderGridWithPaginationController = ({
 
 	const [selection, setSelection] = useState<SelectionState | null>(null);
 	const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+	const [isCreateOrderOpen, setIsCreateOrderOpen] = useState(false);
 
 	const selectedOrder = useMemo(() => {
 		if (!selection || selection.dataToken !== dataToken) {
@@ -42,10 +43,17 @@ export const useOrderGridWithPaginationController = ({
 
 	return {
 		isFiltersOpen,
+		isCreateOrderOpen,
 		selectedOrder,
 		emptyStateMessage,
 		toggleFilters: () => {
 			setIsFiltersOpen((currentState) => !currentState);
+		},
+		openCreateOrderModal: () => {
+			setIsCreateOrderOpen(true);
+		},
+		handleCreateOrderOpenChange: (nextOpen: boolean) => {
+			setIsCreateOrderOpen(nextOpen);
 		},
 		handleRowClick: (order: Order) => {
 			setSelection({

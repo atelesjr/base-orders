@@ -1,0 +1,49 @@
+@reference '../../../../styles/globals.css';
+
+.ui-button-icon {
+	@apply inline-flex items-center justify-center rounded-full transition-transform cursor-pointer hover:scale-105;
+}
+
+.ui-button-icon--sm {
+	@apply min-h-10;
+}
+
+.ui-button-icon--md {
+	@apply min-h-11;
+}
+
+.ui-button-icon--lg {
+	@apply min-h-14;
+}
+
+.ui-button-icon--with-label {
+	@apply gap-2;
+}
+
+.ui-button-icon--primary {
+	@apply font-semibold;
+}
+
+.ui-button-icon--primary:hover {
+	@apply opacity-80;
+}
+
+.ui-button-icon--primary:active {
+	@apply opacity-70;
+}
+
+.ui-button-icon--secondary {
+	@apply font-semibold;
+}
+
+.ui-button-icon--secondary:hover {
+	@apply opacity-80;
+}
+
+.ui-button-icon--secondary:active {
+	@apply opacity-70;
+}
+
+.ui-button-icon__label {
+	@apply text-grid-sm tracking-wide;
+}

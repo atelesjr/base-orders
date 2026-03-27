@@ -38,22 +38,6 @@ export type OrdersGridRootProps = {
 	children: ReactNode;
 };
 
-export type OrdersGridTableProps = {
-	children: ReactNode;
-};
-
-export type OrdersGridHeadProps = {
-	columns: OrdersGridColumn[];
-	sortState?: OrdersGridSortState;
-};
-
-export type OrdersGridBodyProps = {
-	orders: Order[];
-	columns: OrdersGridColumn[];
-	onRowClick?: (order: Order) => void;
-	emptyStateMessage?: string;
-};
-
 export type OrdersGridPaginationProps = {
 	pagination: OrdersGridPaginationData;
 	className?: string;

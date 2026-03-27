@@ -1,0 +1,72 @@
+@reference '../../../styles/globals.css';
+
+.ui-table {
+	@apply w-full;
+}
+
+.ui-table__table-wrapper {
+	@apply w-full overflow-x-auto;
+}
+
+.ui-table__table {
+	@apply w-full min-w-[680px] table-fixed border-collapse border border-black;
+}
+
+.ui-table__caption {
+	@apply mb-2 text-left text-grid-sm font-semibold text-black;
+	caption-side: top;
+}
+
+.ui-table__head-row,
+.ui-table__row {
+	@apply border-b border-black;
+}
+
+.ui-table__th,
+.ui-table__td {
+	@apply border-r border-black px-4 py-3 text-left text-grid-sm whitespace-nowrap;
+}
+
+.ui-table__th:last-child,
+.ui-table__td:last-child {
+	@apply border-r-0;
+}
+
+.ui-table__th {
+	@apply bg-black font-semibold text-white;
+}
+
+.ui-table__td {
+	@apply text-grid-xm;
+}
+
+.ui-table__empty-state {
+	@apply px-4 py-6 text-center text-grid-sm text-black;
+}
+
+.ui-table__row:last-child {
+	@apply border-b-0;
+}
+
+.ui-table__table tbody .ui-table__row:nth-child(odd) {
+	@apply bg-gray;
+}
+
+.ui-table__table tbody .ui-table__row:nth-child(even) {
+	@apply bg-gray-light;
+}
+
+.ui-table__table tbody .ui-table__row {
+	@apply transition-colors;
+}
+
+.ui-table__table tbody .ui-table__row--clickable {
+	@apply cursor-pointer hover:bg-green active:bg-green-dark;
+}
+
+@media (max-width: 640px) {
+	.ui-table__th,
+	.ui-table__td {
+		@apply px-3 py-2;
+	}
+}

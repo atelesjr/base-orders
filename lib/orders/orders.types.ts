@@ -8,6 +8,9 @@ export interface OrderStatusHistoryItem {
 
 export interface Order {
 	id: string;
+	clientOrderId?: string;
+	exchangeOrderId?: string | null;
+	executionId?: string | null;
 	instrument: string;
 	side: OrderSide;
 	price: number;

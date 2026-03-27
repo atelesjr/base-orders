@@ -1,0 +1,84 @@
+@reference '../../../../styles/globals.css';
+
+.ui-date-picker-input {
+	@apply relative flex flex-col gap-1;
+}
+
+.ui-date-picker-input__label {
+	@apply text-grid-sm text-black font-semibold;
+}
+
+.ui-date-picker-input__field {
+	@apply inline-flex h-[3.5rem] w-full items-center justify-between rounded border border-black bg-white px-3 text-(length:--font-size-base) font-medium leading-none transition-colors duration-200;
+	@apply hover:border-green;
+}
+
+.ui-date-picker-input__field:focus,
+.ui-date-picker-input__field:focus-visible {
+	@apply outline-2 outline-green;
+	outline-offset: 2px;
+}
+
+.ui-date-picker-input__field--disabled {
+	@apply cursor-not-allowed opacity-60;
+}
+
+.ui-date-picker-input__icon {
+	@apply text-grid-sm;
+}
+
+.ui-date-picker-input__popover {
+	@apply absolute left-0 top-full z-30 mt-1 w-[320px] max-w-[calc(100vw-2rem)] rounded border border-black bg-white p-3 shadow-md;
+}
+
+.ui-date-picker-input__header {
+	@apply mb-2 flex items-center justify-between text-grid-sm;
+}
+
+.ui-date-picker-input__nav {
+	@apply flex items-center gap-1;
+}
+
+.ui-date-picker-input__nav button {
+	@apply h-7 w-7 rounded text-grid-sm hover:bg-green active:bg-green-dark;
+}
+
+.ui-date-picker-input__weekdays {
+	@apply mb-1 grid grid-cols-7 text-center text-grid-sm font-semibold;
+}
+
+.ui-date-picker-input__grid {
+	@apply grid grid-cols-7 gap-1;
+}
+
+.ui-date-picker-input__day {
+	@apply h-8 rounded text-grid-sm hover:bg-green active:bg-green-dark;
+}
+
+.ui-date-picker-input__day--outside {
+	@apply text-black/40;
+}
+
+.ui-date-picker-input__day--today {
+	@apply border border-black;
+}
+
+.ui-date-picker-input__day--selected {
+	@apply bg-green-light font-semibold;
+}
+
+.ui-date-picker-input__actions {
+	@apply mt-2 flex items-center justify-between;
+}
+
+.ui-date-picker-input__actions button {
+	@apply rounded px-2 py-1 text-grid-sm hover:bg-green active:bg-green-dark;
+}
+
+.ui-date-picker-input--invalid {
+	@apply border-red-alert;
+}
+
+.ui-date-picker-input__error {
+	@apply text-grid-sm text-red-600 font-semibold;
+}

@@ -1,0 +1,43 @@
+@reference '../../../../styles/globals.css';
+
+.ui-radio-input {
+	@apply flex flex-col gap-1;
+}
+
+.ui-radio-input__label {
+	@apply text-grid-sm text-black font-semibold;
+}
+
+.ui-radio-input [role='radiogroup'] {
+	@apply flex flex-wrap gap-4;
+}
+
+.ui-radio-input__option {
+	@apply inline-flex items-center gap-2 text-[1.6rem] text-black transition-all duration-200 cursor-pointer;
+
+	&:hover {
+		@apply text-green font-semibold;
+	}
+}
+
+.ui-radio-input__option input {
+	@apply h-6 w-6 border border-black transition-colors duration-200;
+	@apply hover:border-green;
+	@apply focus-visible:outline-2 focus-visible:outline-green accent-green;
+}
+
+.ui-radio-input__option span {
+	@apply select-none;
+}
+
+.ui-radio-input__option:has(input:disabled) {
+	@apply cursor-not-allowed opacity-60;
+}
+
+.ui-radio-input__option--invalid input {
+	@apply border-red-alert;
+}
+
+.ui-radio-input__error {
+	@apply text-grid-sm text-red-600 font-semibold;
+}

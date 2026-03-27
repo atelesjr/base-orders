@@ -1,0 +1,53 @@
+@reference '../../../../styles/globals.css';
+
+.ui-select-input {
+	@apply flex flex-col gap-1;
+}
+
+.ui-select-input__label {
+	@apply text-grid-sm text-black font-semibold;
+}
+
+.ui-select-input__field {
+	@apply inline-flex h-[3.5rem] w-full items-center justify-between rounded border border-black bg-white px-3 text-(length:--font-size-base) font-medium leading-none transition-colors duration-200;
+	@apply hover:border-green;
+}
+
+.ui-select-input__field:focus,
+.ui-select-input__field:focus-visible {
+	@apply outline-2 outline-green;
+	outline-offset: 2px;
+}
+
+.ui-select-input__field--disabled {
+	@apply cursor-not-allowed opacity-60;
+}
+
+.ui-select-input__caret {
+	@apply text-grid-sm;
+}
+
+.ui-select-input__menu {
+	@apply mt-[-2px] overflow-hidden rounded border border-black bg-white;
+}
+
+.ui-select-input__option {
+	@apply w-full px-3 py-2 text-left text-grid-sm text-black;
+}
+
+.ui-select-input__option:hover,
+.ui-select-input__option:focus-visible {
+	@apply bg-green text-black;
+}
+
+.ui-select-input__option--selected {
+	@apply bg-green-light font-semibold text-black;
+}
+
+.ui-select-input--invalid {
+	@apply border-red-alert;
+}
+
+.ui-select-input__error {
+	@apply text-grid-sm text-red-600 font-semibold;
+}

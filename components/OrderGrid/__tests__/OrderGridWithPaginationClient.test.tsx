@@ -3,7 +3,7 @@ import { makeOrder } from '@/lib/orders/__tests__/fixtures/orders.fixture';
 import OrderGridWithPaginationClient from '../OrderGridWithPaginationClient';
 
 jest.mock('next/navigation', () => ({
-	useRouter: () => ({ push: jest.fn() }),
+	useRouter: () => ({ push: jest.fn(), refresh: jest.fn() }),
 	usePathname: () => '/',
 	useSearchParams: () => new URLSearchParams(),
 }));
@@ -109,5 +109,26 @@ describe('OrderGridWithPaginationClient', () => {
 		);
 
 		expect(screen.getByText('Nenhuma ordem encontrada.')).toBeInTheDocument();
+	});
+
+	it('opens create-order modal when toolbar action is clicked', () => {
+		render(
+			<OrderGridWithPaginationClient
+				filters={{}}
+				orders={[makeOrder({ id: '1', instrument: 'PETR4' })]}
+				pagination={{ currentPage: 1, totalPages: 1 }}
+				sortState={{
+					sortBy: 'timestamp',
+					sortDir: 'desc',
+					sortLinks: { timestamp: '/?page=1&sortBy=timestamp&sortDir=asc' },
+				}}
+			/>,
+		);
+
+		fireEvent.click(screen.getByRole('button', { name: 'Criar ordem' }));
+		expect(screen.getByRole('dialog')).toBeInTheDocument();
+		expect(
+			screen.getByRole('heading', { name: 'Criar ordem' }),
+		).toBeInTheDocument();
 	});
 });

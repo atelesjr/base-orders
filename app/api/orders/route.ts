@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { createOrderSchema } from '@/lib/orders/create-order.schema';
 import { fetchWithTimeout } from '@/lib/shared/fetch-with-timeout';
 import { env } from '@/lib/shared/env';
-import { uuidv4 } from '@/lib/shared/uuid';
+import { randomUUID } from 'crypto';
 
 const generateClientOrderId = (internalOrderId: string): string => {
 	return `CL-${new Date().getTime()}-${internalOrderId}`;
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 	}
 
 	const nowIso = new Date().toISOString();
-	const uuid = uuidv4();
+	const uuid = randomUUID();
 
 	const payload = {
 		id: uuid,

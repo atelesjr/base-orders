@@ -23,9 +23,6 @@ importers:
       react-hook-form:
         specifier: ^7.71.2
         version: 7.71.2(react@19.2.3)
-      storybook:
-        specifier: ^10.3.1
-        version: 10.3.1(@testing-library/dom@10.4.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -75,6 +72,9 @@ importers:
       json-server:
         specifier: 1.0.0-beta.13
         version: 1.0.0-beta.13
+      storybook:
+        specifier: ^10.3.1
+        version: 10.3.1(@testing-library/dom@10.4.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       stylelint:
         specifier: ^16.24.0
         version: 16.26.1(typescript@5.9.3)

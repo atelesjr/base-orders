@@ -2,15 +2,20 @@ import { NextResponse, NextRequest } from 'next/server';
 import { createOrderSchema } from '@/lib/orders/create-order.schema';
 import { randomUUID } from 'crypto';
 
+// Helper to get the API base URL from env or fallback
+const getApiBaseUrl = () => {
+	return process.env.INTERNAL_API_BASE_URL || 'http://localhost:3001';
+};
+
 // GET /api/orders - list all orders
 export async function GET(request: NextRequest) {
-  // Always fetch from the public mock server on Render
-  const response = await fetch('https://base-orders.onrender.com/orders', { cache: 'no-store' });
-  if (!response.ok) {
-    return NextResponse.json({ message: `Failed to fetch orders: ${response.status}` }, { status: response.status });
-  }
-  const orders = await response.json();
-  return NextResponse.json(orders);
+	const baseUrl = getApiBaseUrl();
+	const response = await fetch(`${baseUrl}/orders`, { cache: 'no-store' });
+	if (!response.ok) {
+		return NextResponse.json({ message: `Failed to fetch orders: ${response.status}` }, { status: response.status });
+	}
+	const orders = await response.json();
+	return NextResponse.json(orders);
 }
 
 const generateClientOrderId = (internalOrderId: string): string => {
@@ -49,12 +54,14 @@ export async function POST(request: Request) {
 		statusHistory: [{ status: 'Aberta' as const, updatedAt: nowIso }],
 	};
 
-	const response = await fetch(`${process.env.INTERNAL_API_BASE_URL}/orders`, {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify(payload),
-		cache: 'no-store',
-	});
+
+		const baseUrl = getApiBaseUrl();
+		const response = await fetch(`${baseUrl}/orders`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(payload),
+			cache: 'no-store',
+		});
 
 	if (!response.ok) {
 		return NextResponse.json(

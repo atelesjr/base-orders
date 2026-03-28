@@ -4,7 +4,11 @@ import { env } from '@/lib/shared/env';
 import type { Order } from './orders.types';
 
 export const findAllOrders: () => Promise<Order[]> = async () => {
-	const response = await fetchWithTimeout(`${env.apiBaseUrl}/orders`, {
+	const isDev = process.env.NODE_ENV === 'development';
+	const url = isDev
+		? `${env.apiBaseUrl}/orders`
+		: `${env.apiBaseUrl}/api/orders`;
+	const response = await fetchWithTimeout(url, {
 		cache: 'no-store',
 	});
 
@@ -18,7 +22,11 @@ export const findAllOrders: () => Promise<Order[]> = async () => {
 type FindOrderById = (id: string) => Promise<Order | null>;
 
 export const findOrderById: FindOrderById = async (id) => {
-	const response = await fetchWithTimeout(`${env.apiBaseUrl}/orders/${id}`, {
+	const isDev = process.env.NODE_ENV === 'development';
+	const url = isDev
+		? `${env.apiBaseUrl}/orders/${id}`
+		: `${env.apiBaseUrl}/api/orders/${id}`;
+	const response = await fetchWithTimeout(url, {
 		cache: 'no-store',
 	});
 

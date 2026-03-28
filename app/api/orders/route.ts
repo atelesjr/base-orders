@@ -10,9 +10,14 @@ const getApiBaseUrl = () => {
 // GET /api/orders - list all orders
 export async function GET(request: NextRequest) {
 	const baseUrl = getApiBaseUrl();
+	/*check if console log is good here. Nothing shows on console log*/
+	console.log(`Fetching orders from API at ${baseUrl}/orders`);
 	const response = await fetch(`${baseUrl}/orders`, { cache: 'no-store' });
 	if (!response.ok) {
-		return NextResponse.json({ message: `Failed to fetch orders: ${response.status}` }, { status: response.status });
+		return NextResponse.json(
+			{ message: `Failed to fetch orders: ${response.status}` },
+			{ status: response.status },
+		);
 	}
 	const orders = await response.json();
 	return NextResponse.json(orders);
@@ -54,14 +59,13 @@ export async function POST(request: Request) {
 		statusHistory: [{ status: 'Aberta' as const, updatedAt: nowIso }],
 	};
 
-
-		const baseUrl = getApiBaseUrl();
-		const response = await fetch(`${baseUrl}/orders`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(payload),
-			cache: 'no-store',
-		});
+	const baseUrl = getApiBaseUrl();
+	const response = await fetch(`${baseUrl}/orders`, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify(payload),
+		cache: 'no-store',
+	});
 
 	if (!response.ok) {
 		return NextResponse.json(

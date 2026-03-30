@@ -13,7 +13,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      INTERNAL_API_BASE_URL: h${{ secrets.INTERNAL_API_BASE_URL }}
+      INTERNAL_API_BASE_URL: ${{ secrets.INTERNAL_API_BASE_URL }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,8 +21,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'pnpm'
+          node-version: '24.11.1'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -43,5 +42,6 @@ jobs:
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           working-directory: .
           vercel-args: '--prod'

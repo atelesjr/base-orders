@@ -1,6 +1,6 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { createOrderSchema } from '@/lib/orders/create-order.schema';
-import { randomUUID } from 'crypto';
+// import { randomUUID } from 'crypto';
 
 // Helper to get the API base URL from env or fallback
 const getApiBaseUrl = () => {
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
 }
 
 const generateClientOrderId = (internalOrderId: string): string => {
-	return `CL-${new Date().getTime()}-${internalOrderId}`;
+	return `CL-${Date.now()}-${internalOrderId}`;
 };
 
 export async function POST(request: Request) {
@@ -42,11 +42,11 @@ export async function POST(request: Request) {
 	}
 
 	const nowIso = new Date().toISOString();
-	const uuid = randomUUID();
+	const id = Date.now().toString();
 
 	const payload = {
-		id: uuid,
-		clientOrderId: generateClientOrderId(uuid),
+		id: id,
+		clientOrderId: generateClientOrderId(id),
 		exchangeOrderId: null,
 		executionId: null,
 		instrument: parsedBody.data.instrument,

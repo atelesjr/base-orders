@@ -1,5 +1,5 @@
-import OrderGridWithPagination from '@/components/OrderGrid/OrderGridWithPagination';
-import type { OrderGridQueryParams } from '@/components/OrderGrid/order-grid.query';
+import OrderGridWithPagination from '@/components/Order/OrderGrid/OrderGridWithPagination';
+import type { OrderGridQueryParams } from '@/components/Order/OrderGrid/order-grid.query';
 import Header from '@/components/Header';
 
 type HomeProps = {

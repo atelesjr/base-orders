@@ -1,4 +1,4 @@
-@reference '../../../../styles/globals.css';
+@reference '../../../../../styles/globals.css';
 
 .orders-grid__filters {
 	@apply mb-4 rounded-lg border border-black bg-gray-light p-4;
